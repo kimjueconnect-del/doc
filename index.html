@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Dashboard</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --black: #111;
+            --white: #fff;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-500: #777;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: var(--gray-100);
+            color: var(--black);
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .dashboard {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 56px 0 64px;
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            border-bottom: 2px solid var(--black);
+            padding-bottom: 18px;
+            margin-bottom: 34px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: .95;
+            letter-spacing: -.04em;
+            font-weight: 700;
+        }
+
+        .header-note {
+            max-width: 260px;
+            margin: 0;
+            color: var(--gray-500);
+            font: 700 .75rem/1.4 Arial, sans-serif;
+            letter-spacing: .12em;
+            text-align: right;
+            text-transform: uppercase;
+        }
+
+        .document-panel {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: clamp(24px, 5vw, 56px);
+            background: var(--white);
+            border: 1px solid var(--black);
+            box-shadow: 12px 12px 0 var(--black);
+        }
+
+        .panel-heading {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--black);
+        }
+
+        h2 { margin: 0; font-size: 1.35rem; }
+
+        .count {
+            color: var(--gray-500);
+            font: .75rem Arial, sans-serif;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .document-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0 18px;
+            margin: 10px 0 0;
+        }
+
+        .document-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            min-height: 68px;
+            padding: 14px 4px;
+            color: var(--black);
+            border-bottom: 1px solid var(--gray-200);
+            text-decoration: none;
+            transition: background-color .18s ease, padding .18s ease;
+        }
+
+        .document-link:hover,
+        .document-link:focus-visible {
+            padding-right: 12px;
+            padding-left: 12px;
+            background: var(--black);
+            color: var(--white);
+            outline: none;
+        }
+
+        .document-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+        .document-arrow {
+            flex: 0 0 auto;
+            font: 1.25rem Arial, sans-serif;
+        }
+
+        footer {
+            margin-top: 34px;
+            color: var(--gray-500);
+            font: .7rem Arial, sans-serif;
+            letter-spacing: .08em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 640px) {
+            .dashboard { padding-top: 32px; }
+            .dashboard-header { display: block; }
+            .header-note { margin-top: 16px; text-align: left; }
+            .document-list { grid-template-columns: 1fr; }
+            .document-panel { box-shadow: 7px 7px 0 var(--black); }
+        }
+    </style>
+</head>
+<body>
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <h1>Documents</h1>
+            <p class="header-note">A simple index of your document library</p>
+        </header>
+
+        <section class="document-panel" aria-labelledby="document-heading">
+            <div class="panel-heading">
+                <h2 id="document-heading">All documents</h2>
+                <span class="count">19 files</span>
+            </div>
+            <nav class="document-list" aria-label="Document list">
+                <a class="document-link" href="documents/affidavit.html"><span class="document-name">Affidavit</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/crypto%20transactions.html"><span class="document-name">Crypto transactions</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/expenses.html"><span class="document-name">Expenses</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/invoice.html"><span class="document-name">Invoice</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/payment%20inv.html"><span class="document-name">Payment invoice</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/pro%20affi.html"><span class="document-name">Professional affidavit</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/project%20comp.html"><span class="document-name">Project completion</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/server%20infra.html"><span class="document-name">Server infrastructure</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/service%20agg.html"><span class="document-name">Service agreement</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/soft%20agree.html"><span class="document-name">Software agreement</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/soft%20hand.html"><span class="document-name">Software handover</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/soft%20voice.html"><span class="document-name">Software invoice</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="stamp.html"><span class="document-name">Stamp</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/stamp%20paper.html"><span class="document-name">Stamp paper</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="documents/statement.html"><span class="document-name">Statement</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="nda.html"><span class="document-name">Non-disclosure agreement</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="report.html"><span class="document-name">Project report</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="stats.html"><span class="document-name">Project stats</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="document-link" href="vercel.html"><span class="document-name">Live Vercel project</span><span class="document-arrow" aria-hidden="true">-&gt;</span></a>
+            </nav>
+        </section>
+
+        <footer>Document dashboard</footer>
+    </main>
+    <script src="security.js"></script>
+</body>
+</html>

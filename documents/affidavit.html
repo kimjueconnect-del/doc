@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFFIDAVIT - Payment Confirmation</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            color: #000;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .a4-container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 25mm 20mm;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        
+        .affidavit-header {
+            text-align: center;
+            border-bottom: 3px double #000;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .affidavit-header h1 {
+            font-size: 22pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+        
+        .affidavit-header .subtitle {
+            font-size: 10pt;
+            color: #333;
+            font-style: italic;
+        }
+        
+        .stamp-area {
+            float: right;
+            width: 80px;
+            height: 100px;
+            border: 2px dashed #999;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9pt;
+            color: #666;
+            text-align: center;
+        }
+        .stamp-area img { width: 82px; height: 82px; object-fit: contain; opacity: .7; }
+        
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .deponent-section {
+            margin-top: 20px;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 20px 0 10px 0;
+            font-size: 13pt;
+        }
+        
+        .affidavit-body {
+            text-align: justify;
+            margin: 20px 0;
+        }
+        
+        .affidavit-body p {
+            margin-bottom: 15px;
+            text-indent: 0;
+        }
+        
+        .highlight-box {
+            border: 1px solid #000;
+            padding: 15px;
+            margin: 20px 0;
+            background: #fafafa;
+        }
+        
+        .payment-details {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .payment-details td {
+            border: 1px solid #333;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .payment-details .label {
+            font-weight: bold;
+            background: #f0f0f0;
+            width: 40%;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .signature-box {
+            width: 45%;
+            text-align: center;
+        }
+        
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 100%;
+            margin-top: 60px;
+            padding-top: 5px;
+            font-weight: bold;
+        }
+        
+        .witness-section {
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        
+        .verification-section {
+            margin-top: 40px;
+            border: 2px solid #000;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        
+        .verification-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14pt;
+            margin-bottom: 15px;
+            text-decoration: underline;
+        }
+        
+        .notary-seal {
+            float: right;
+            width: 120px;
+            height: 120px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 9pt;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-note {
+            margin-top: 30px;
+            font-size: 10pt;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            text-align: justify;
+        }
+        
+        .place-date {
+            margin: 30px 0;
+        }
+        
+        .place-date table {
+            width: 100%;
+        }
+        
+        .place-date td {
+            padding: 5px 0;
+        }
+        
+        .oath-section {
+            font-style: italic;
+            border-left: 4px solid #333;
+            padding-left: 15px;
+            margin: 20px 0;
+            background: #f5f5f5;
+            padding: 15px;
+        }
+        
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .a4-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="a4-container">
+        <!-- Header -->
+        <div class="affidavit-header">
+            <h1>AFFIDAVIT</h1>
+            <div class="subtitle">(Under Section 139 of the Code of Civil Procedure, 1908 &<br>Order XIX of the Code of Civil Procedure, 1908)</div>
+        </div>
+        
+        <!-- Stamp Area -->
+        <div class="stamp-area clearfix">
+            <img src="../UChicago.png" alt="University of Chicago COLLEGE SEAL"><br>
+            COLLEGE SEAL<br>NOT A GOVERNMENT STAMP
+        </div>
+        
+        <!-- Deponent Details -->
+        <div class="deponent-section">
+            <div class="section-title">DEPONENT DETAILS:</div>
+            <p><strong>Name:</strong> Ravi Kumar [DC]</p>
+            <p><strong>S/O:</strong> _________________________________</p>
+            <p><strong>Age:</strong> ___________ years</p>
+            <p><strong>Occupation:</strong> _________________________________</p>
+            <p><strong>Residential Address:</strong> _________________________________________________________________</p>
+            <p>_________________________________________________________________</p>
+            <p><strong>Contact Number:</strong> _________________________________</p>
+            <p><strong>Email ID:</strong> _________________________________</p>
+        </div>
+        
+        <!-- Affidavit Body -->
+        <div class="affidavit-body">
+            <div class="section-title">AFFIDAVIT</div>
+            
+            <p>I, <strong>Ravi Kumar [DC]</strong>, aged _______ years, son of _________________________, resident of _______________________________________________________________, do hereby solemnly affirm and declare as follows:</p>
+            
+            <div class="oath-section">
+                <strong>SOLEMN DECLARATION:</strong> I affirm that the contents of this affidavit are true and correct to the best of my knowledge and belief, and nothing material has been concealed therefrom.
+            </div>
+            
+            <p><strong>1.</strong> That I am the Deponent above named and I am well conversant with the facts and circumstances of the matter deposed herein below.</p>
+            
+            <p><strong>2.</strong> That I hereby confirm and acknowledge that I have received a total sum of <strong>₹53,000/- (Rupees Fifty-Three Thousand Only)</strong> from <strong>Shri Priyanshu Singh</strong>, hereinafter referred to as the "Payee," on behalf of our unregulated business entity bearing Addressing ID: <strong>UCWDP210326</strong>.</p>
+            
+            <p><strong>3.</strong> That the said payment of ₹53,000/- was made by Shri Priyanshu Singh to me for the following professional services rendered/undertaken:</p>
+        </div>
+        
+        <!-- Payment Details Table -->
+        <table class="payment-details">
+            <tr>
+                <td class="label">Service Category</td>
+                <td class="label">Description</td>
+                <td class="label">Amount (₹)</td>
+            </tr>
+            <tr>
+                <td>Survey</td>
+                <td>Field survey and data collection services</td>
+                <td>___________</td>
+            </tr>
+            <tr>
+                <td>Travel Expenses</td>
+                <td>Conveyance and accommodation for official duties</td>
+                <td>___________</td>
+            </tr>
+            <tr>
+                <td>Indexing</td>
+                <td>Documentation indexing and cataloging services</td>
+                <td>___________</td>
+            </tr>
+            <tr>
+                <td>Onboarding</td>
+                <td>Client/employee onboarding process management</td>
+                <td>___________</td>
+            </tr>
+            <tr>
+                <td>Testing</td>
+                <td>Quality testing and validation services</td>
+                <td>___________</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: right; font-weight: bold;">TOTAL AMOUNT RECEIVED:</td>
+                <td style="font-weight: bold; font-size: 14pt;">₹53,000/-</td>
+            </tr>
+        </table>
+        
+        <div class="affidavit-body">
+            <p><strong>4.</strong> That the aforementioned payment was made in good faith and in full settlement of the professional charges for the services enumerated above, and no further amount is outstanding or due from Shri Priyanshu Singh or the said business entity (ID: UCWDP210326) to me in respect of the aforesaid services.</p>
+            
+            <p><strong>5.</strong> That I have no claim, whatsoever, against Shri Priyanshu Singh or the said business entity in relation to the above-mentioned payment and services, and I hereby discharge the said party from any and all liabilities, claims, demands, or suits arising out of or in connection with the aforesaid transaction.</p>
+            
+            <p><strong>6.</strong> That this affidavit is being executed to serve as conclusive evidence of the receipt of the said amount and to provide confirmation of payment for the official records of the business entity and for any regulatory or statutory requirements as may be applicable.</p>
+            
+            <p><strong>7.</strong> That I am executing this affidavit voluntarily and without any coercion, undue influence, or pressure from any person whatsoever.</p>
+            
+            <p><strong>8.</strong> That I am aware that this affidavit is being executed under the provisions of the Oaths Act, 1969 and is legally binding upon me.</p>
+        </div>
+        
+        <!-- Place and Date -->
+        <div class="place-date">
+            <table>
+                <tr>
+                    <td><strong>Place:</strong> _________________________________</td>
+                </tr>
+                <tr>
+                    <td><strong>Date:</strong> _________________________________</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Signature Section -->
+        <div class="signature-section">
+            <div class="signature-box">
+                <img src="../dsign.jpg" alt="Ravi Kumar signature" style="display: block; width: 150px; height: 58px; object-fit: contain; margin: 0 auto -4px;">
+                <div class="signature-line">Signature of Deponent<br>(Ravi Kumar [DC])</div>
+                <p style="font-size: 10pt; margin-top: 10px;">(Affix Passport Size Photo)</p>
+                <div style="border: 1px solid #000; width: 100px; height: 120px; margin: 10px auto; display: flex; align-items: center; justify-content: center; font-size: 9pt; color: #666;">
+                    Photo<br>Here
+                </div>
+            </div>
+            
+            <div class="signature-box">
+                <img src="../asign.jpg" alt="Priyanshu Singh signature" style="display: block; width: 150px; height: 58px; object-fit: contain; margin: 0 auto -4px;">
+                <div class="signature-line">Signature of Payee<br>(Priyanshu Singh)</div>
+                <p style="font-size: 10pt; margin-top: 10px;">(Affix Passport Size Photo)</p>
+                <div style="border: 1px solid #000; width: 100px; height: 120px; margin: 10px auto; display: flex; align-items: center; justify-content: center; font-size: 9pt; color: #666;">
+                    Photo<br>Here
+                </div>
+            </div>
+        </div>
+        
+        <!-- Witness Section -->
+        <div class="witness-section">
+            <div class="section-title">WITNESSES:</div>
+            
+            <p><strong>1.</strong> Name: _________________________________</p>
+            <p>&nbsp;&nbsp;&nbsp;Address: _________________________________________________________________</p>
+            <p>&nbsp;&nbsp;&nbsp;Occupation: _________________________________</p>
+            <p>&nbsp;&nbsp;&nbsp;Signature: _________________________________</p>
+            
+            <p style="margin-top: 20px;"><strong>2.</strong> Name: _________________________________</p>
+            <p>&nbsp;&nbsp;&nbsp;Address: _________________________________________________________________</p>
+            <p>&nbsp;&nbsp;&nbsp;Occupation: _________________________________</p>
+            <p>&nbsp;&nbsp;&nbsp;Signature: _________________________________</p>
+        </div>
+        
+        <!-- Verification Section -->
+        <div class="verification-section">
+            <div class="notary-seal">
+                NOTARY<br>SEAL<br>&<br>SIGNATURE
+            </div>
+            
+            <div class="verification-title">VERIFICATION</div>
+            
+            <p>Verified at _______________________ on this _______ day of _______________, 20____ that the contents of the above affidavit are true and correct to the best of my knowledge and belief.</p>
+            
+            <p style="margin-top: 20px;"><strong>Solemnly affirmed and verified by the above-named deponent</strong></p>
+            <p style="margin-top: 10px;"><strong>Ravi Kumar [DC]</strong></p>
+            
+            <div style="margin-top: 30px;">
+                <p><strong>Identified by me:</strong></p>
+                <p style="margin-top: 20px;">_________________________</p>
+                <p><strong>Advocate / Notary Public / Oath Commissioner</strong></p>
+                <p>Registration No.: _________________________</p>
+                <p>Date: _________________________</p>
+                <p>Place: _________________________</p>
+            </div>
+        </div>
+        
+        <!-- Footer Note -->
+        <div class="footer-note">
+            <strong>Note:</strong> This affidavit is executed on non-judicial stamp paper of appropriate value as per the Indian Stamp Act, 1899 and is being submitted for the purpose of confirming receipt of payment for professional services rendered. The deponent understands that any false statement made herein shall render him liable for prosecution under Section 193 of the Indian Penal Code, 1860 and/or under Section 199 of the Code of Criminal Procedure, 1973.
+        </div>
+        
+        <!-- Document Footer -->
+        <div style="margin-top: 30px; text-align: center; font-size: 10pt; border-top: 2px solid #000; padding-top: 10px;">
+            <strong>Business Reference ID: UCWDP210326 | Document Generated for Internal Records</strong>
+        </div>
+    </div>
+</body>
+<script src="../security.js"></script>
+</html>

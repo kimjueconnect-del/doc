@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Infrastructure Invoice</title>
+    <style>
+        @page { size: A4 portrait; margin: 8mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0a0e27;
+            padding: 8px;
+            color: #fff;
+        }
+        .invoice {
+            max-width: 760px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #1a1f3d 0%, #0f1429 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        .header {
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            padding: 18px 22px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        .invoice-type {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .invoice-title {
+            font-size: 32pt;
+            font-weight: 300;
+        }
+        .invoice-title span {
+            font-weight: 700;
+        }
+        .content {
+            padding: 18px 22px;
+        }
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .info-card {
+            background: rgba(255,255,255,0.05);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .info-label {
+            font-size: 9pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #00d4ff;
+            margin-bottom: 5px;
+        }
+        .server-specs {
+            background: rgba(0,212,255,0.05);
+            border: 1px solid rgba(0,212,255,0.2);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 14px 0;
+        }
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .spec-item {
+            text-align: center;
+        }
+        .spec-value {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+        .spec-label {
+            font-size: 9pt;
+            color: #888;
+            margin-top: 2px;
+        }
+        .line-items {
+            margin: 14px 0;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .item-row:hover {
+            background: rgba(255,255,255,0.02);
+        }
+        .item-info h4 {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .item-info p {
+            color: #888;
+            font-size: 10pt;
+        }
+        .item-amount {
+            font-size: 12pt;
+            color: #00d4ff;
+            font-weight: 600;
+        }
+        .total-section {
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            padding: 14px;
+            border-radius: 8px;
+            margin-top: 14px;
+        }
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 4px 0;
+        }
+        .grand-total {
+            font-size: 20pt;
+            font-weight: bold;
+            border-top: 2px solid rgba(255,255,255,0.3);
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        .footer-note {
+            margin-top: 14px;
+            padding: 10px;
+            background: rgba(255,193,7,0.1);
+            border: 1px solid rgba(255,193,7,0.3);
+            border-radius: 10px;
+            color: #ffc107;
+            font-size: 8pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice">
+        <div class="header">
+            <div class="invoice-type">Infrastructure & Hosting</div>
+            <h1 class="invoice-title"><span>CLOUD</span> SERVER</h1>
+            <p style="margin-top: 10px; opacity: 0.9;">Project UCWDP210326 | Setup & Configuration</p>
+        </div>
+        
+        <div class="content">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-label">Client</div>
+                    <p style="font-size: 14pt;">Vercel Digital Project 210326</p>
+                    <p style="color: #888; font-size: 10pt;">Project ID: UCWDP210326</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Invoice Details</div>
+                    <p style="font-size: 14pt;">INF-2026-026</p>
+                    <p style="color: #888; font-size: 10pt;">Date: August 26, 2026</p>
+                </div>
+            </div>
+            
+            <div class="server-specs">
+                <div class="info-label">Server Configuration</div>
+                <h3 style="margin: 10px 0;">AWS EC2 / Dedicated Server - Production Environment</h3>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-value">16</div>
+                        <div class="spec-label">vCPU Cores</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">64</div>
+                        <div class="spec-label">GB RAM</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">2TB</div>
+                        <div class="spec-label">SSD Storage</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">10Gbps</div>
+                        <div class="spec-label">Network</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="line-items">
+                <div class="item-row">
+                    <div class="item-info">
+                        <h4>Dedicated Server Provisioning</h4>
+                        <p>High-availability server setup with Ubuntu 22.04 LTS, security hardening, firewall configuration</p>
+                    </div>
+                    <div class="item-amount">$800.00</div>
+                </div>
+                
+                <div class="item-row">
+                    <div class="item-info">
+                        <h4>Storage Infrastructure</h4>
+                        <p>2TB NVMe SSD primary storage + 5TB backup storage + CDN configuration</p>
+                    </div>
+                    <div class="item-amount">$300.00</div>
+                </div>
+                
+                <div class="item-row">
+                    <div class="item-info">
+                        <h4>Database Server Setup</h4>
+                        <p>PostgreSQL cluster with replication, Redis caching layer, automated backups</p>
+                    </div>
+                    <div class="item-amount">$200.00</div>
+                </div>
+                
+                <div class="item-row">
+                    <div class="item-info">
+                        <h4>Load Balancer & Scaling</h4>
+                        <p>Application load balancer, auto-scaling groups, container orchestration (Docker + Kubernetes)</p>
+                    </div>
+                    <div class="item-amount">$150.00</div>
+                </div>
+                
+                <div class="item-row">
+                    <div class="item-info">
+                        <h4>SSL Certificates & Security</h4>
+                        <p>Wildcard SSL certificate, WAF setup, DDoS protection, security monitoring</p>
+                    </div>
+                    <div class="item-amount">$50.00</div>
+                </div>
+            </div>
+            
+            <div class="total-section">
+                <div class="total-row">
+                    <span>Server & Infrastructure</span>
+                    <span>$1,500.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Setup & Configuration (Included)</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Taxes</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="total-row grand-total">
+                    <span>TOTAL</span>
+                    <span>$1,500.00</span>
+                </div>
+            </div>
+            
+            <div class="footer-note">
+                <strong>⚠️ IMPORTANT:</strong> This invoice covers one-time server setup costs. 
+                Recurring hosting charges (estimated $200-300/month) will apply from next billing cycle. 
+                Server access credentials provided separately via secure channel.
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../security.js"></script>
+</html>

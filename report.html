@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Report</title>
+    <style>
+        :root { --ink: #172432; --muted: #647484; --blue: #176b78; --orange: #d98235; --line: #dce4e8; }
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 24px; background: #edf1f0; color: var(--ink); font: 14px/1.55 Arial, sans-serif; }
+        .report { max-width: 1050px; margin: auto; background: #fff; box-shadow: 0 14px 40px rgba(23,36,50,.14); }
+        .cover { min-height: 360px; display: grid; grid-template-columns: 1fr 1fr; background: var(--ink); color: #fff; }
+        .cover-copy { padding: clamp(28px, 6vw, 72px); align-self: end; }
+        .kicker { color: #f1b06d; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+        h1 { margin: 12px 0; font: 700 clamp(2.5rem, 7vw, 5.2rem)/.9 Georgia, serif; letter-spacing: -.05em; }
+        .cover-copy p { max-width: 380px; color: #c8d4da; }
+        .cover img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; }
+        .body { padding: clamp(26px, 5vw, 62px); }
+        .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
+        h2 { margin: 0 0 10px; font: 700 1.65rem Georgia, serif; }
+        .tag { display: inline-block; margin-bottom: 10px; color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+        .gallery { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; margin-top: 30px; }
+        .gallery img { width: 100%; height: 180px; object-fit: cover; }
+        .gallery img:first-child { height: 372px; grid-row: span 2; }
+        .image-section { margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line); }
+        .image-section h2 { margin-top: 0; }
+        .image-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+        .image-grid figure { margin: 0; }
+        .image-grid img { display: block; width: 100%; height: 190px; object-fit: cover; background: #edf1f0; }
+        .image-grid figcaption { padding-top: 6px; color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+        img { cursor: zoom-in; }
+        .image-viewer { position: fixed; inset: 0; z-index: 10; display: none; place-items: center; padding: 24px; background: rgba(23,36,50,.88); }
+        .image-viewer.is-open { display: grid; }
+        .image-viewer img { max-width: min(94vw, 1200px); max-height: 88vh; width: auto; height: auto; object-fit: contain; cursor: zoom-out; box-shadow: 0 12px 40px rgba(0,0,0,.35); }
+        .image-viewer button { position: absolute; top: 18px; right: 22px; width: 42px; height: 42px; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,.7); font: 28px/1 Arial, sans-serif; cursor: pointer; }
+        .image-viewer button:hover, .image-viewer button:focus-visible { background: var(--orange); outline: none; }
+        .findings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 32px; }
+        .finding { padding: 18px; border-top: 3px solid var(--orange); background: #f5f8f7; }
+        .finding strong { display: block; margin-bottom: 5px; font: 700 1.1rem Georgia, serif; }
+        footer { padding: 16px clamp(26px, 5vw, 62px); border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+        @media (max-width: 700px) { body { padding: 8px; } .cover, .intro { display: block; } .cover img { min-height: 220px; max-height: 260px; } .gallery { grid-template-columns: 1fr 1fr; } .gallery img:first-child { height: 230px; grid-column: span 2; grid-row: auto; } .findings { grid-template-columns: 1fr; } .image-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .image-grid img { height: 170px; } }
+        @media (max-width: 430px) { .image-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <main class="report">
+        <section class="cover"><div class="cover-copy"><div class="kicker">Field report · 2026</div><h1>Project<br>Report</h1><p>A visual record of delivery, field activity, and the work completed across the project cycle.</p></div><img src="image/re1.jpg" alt="Project report field record"></section>
+        <section class="body">
+            <div class="intro"><div><span class="tag">Executive overview</span><h2>From brief to working system</h2><p>This report brings together the project evidence, delivery milestones, and on-ground activity into one concise reference. The accompanying visual record documents the people and places behind the work.</p></div><div><span class="tag">Report details</span><p><strong>Project:</strong> Vercel Digital Project 210326</p><p><strong>Team:</strong> Six members</p><p><strong>Coverage:</strong> Delhi and connected project locations</p><p><strong>Status:</strong> Delivery record compiled</p></div></div>
+            <div class="gallery"><img src="image/re2.jpg" alt="Report evidence image 1"><img src="image/re3.jpg" alt="Report evidence image 2"><img src="image/re4.jpg" alt="Report evidence image 3"><img src="image/re5.jpg" alt="Report evidence image 4"><img src="image/re6.jpg" alt="Report evidence image 5"></div>
+            <section class="image-section" aria-labelledby="report-images-heading">
+                <h2 id="report-images-heading">Complete report image record</h2>
+                <div class="image-grid">
+                    <figure><img src="image/re1.jpg" alt="Report image 1" loading="lazy"><figcaption>Report image 1</figcaption></figure>
+                    <figure><img src="image/re2.jpg" alt="Report image 2" loading="lazy"><figcaption>Report image 2</figcaption></figure>
+                    <figure><img src="image/re3.jpg" alt="Report image 3" loading="lazy"><figcaption>Report image 3</figcaption></figure>
+                    <figure><img src="image/re4.jpg" alt="Report image 4" loading="lazy"><figcaption>Report image 4</figcaption></figure>
+                    <figure><img src="image/re5.jpg" alt="Report image 5" loading="lazy"><figcaption>Report image 5</figcaption></figure>
+                    <figure><img src="image/re6.jpg" alt="Report image 6" loading="lazy"><figcaption>Report image 6</figcaption></figure>
+                    <figure><img src="image/re7.jpg" alt="Report image 7" loading="lazy"><figcaption>Report image 7</figcaption></figure>
+                    <figure><img src="image/re8.jpg" alt="Report image 8" loading="lazy"><figcaption>Report image 8</figcaption></figure>
+                    <figure><img src="image/re9.jpg" alt="Report image 9" loading="lazy"><figcaption>Report image 9</figcaption></figure>
+                    <figure><img src="image/re10.jpg" alt="Report image 10" loading="lazy"><figcaption>Report image 10</figcaption></figure>
+                    <figure><img src="image/re11.jpg" alt="Report image 11" loading="lazy"><figcaption>Report image 11</figcaption></figure>
+                    <figure><img src="image/re12.jpg" alt="Report image 12" loading="lazy"><figcaption>Report image 12</figcaption></figure>
+                    <figure><img src="image/re13.jpg" alt="Report image 13" loading="lazy"><figcaption>Report image 13</figcaption></figure>
+                    <figure><img src="image/re14.jpg" alt="Report image 14" loading="lazy"><figcaption>Report image 14</figcaption></figure>
+                    <figure><img src="image/re15.jpg" alt="Report image 15" loading="lazy"><figcaption>Report image 15</figcaption></figure>
+                    <figure><img src="image/re16.jpg" alt="Report image 16" loading="lazy"><figcaption>Report image 16</figcaption></figure>
+                    <figure><img src="image/re17.jpg" alt="Report image 17" loading="lazy"><figcaption>Report image 17</figcaption></figure>
+                    <figure><img src="image/re19.jpg" alt="Report image 19" loading="lazy"><figcaption>Report image 19</figcaption></figure>
+                    <figure><img src="image/re20.jpg" alt="Report image 20" loading="lazy"><figcaption>Report image 20</figcaption></figure>
+                    <figure><img src="image/re21.jpg" alt="Report image 21" loading="lazy"><figcaption>Report image 21</figcaption></figure>
+                    <figure><img src="image/re22.jpg" alt="Report image 22" loading="lazy"><figcaption>Report image 22</figcaption></figure>
+                    <figure><img src="image/re23.jpg" alt="Report image 23" loading="lazy"><figcaption>Report image 23</figcaption></figure>
+                    <figure><img src="image/re24.jpg" alt="Report image 24" loading="lazy"><figcaption>Report image 24</figcaption></figure>
+                    <figure><img src="image/re25.jpg" alt="Report image 25" loading="lazy"><figcaption>Report image 25</figcaption></figure>
+                    <figure><img src="image/re26.jpg" alt="Report image 26" loading="lazy"><figcaption>Report image 26</figcaption></figure>
+                    <figure><img src="image/re27.jpg" alt="Report image 27" loading="lazy"><figcaption>Report image 27</figcaption></figure>
+                </div>
+            </section>
+            <div class="findings"><div class="finding"><strong>Delivery</strong>Core project documentation and supporting material were assembled into a structured archive.</div><div class="finding"><strong>Field work</strong>Movement across Delhi supported site visits, coordination, and direct project execution.</div><div class="finding"><strong>Next phase</strong>Use the linked deployment page to review the live project when the Vercel URL is available.</div></div>
+        </section>
+        <footer>Project report · Internal working document · September 2026</footer>
+    </main>
+    <div class="image-viewer" id="image-viewer" role="dialog" aria-modal="true" aria-label="Expanded image viewer">
+        <button type="button" id="close-image-viewer" aria-label="Close image viewer">&times;</button>
+        <img id="expanded-image" alt="">
+    </div>
+    <script>
+        (function () {
+            var viewer = document.getElementById('image-viewer');
+            var expandedImage = document.getElementById('expanded-image');
+            var closeButton = document.getElementById('close-image-viewer');
+            function closeViewer() { viewer.classList.remove('is-open'); expandedImage.removeAttribute('src'); }
+            document.querySelectorAll('img:not(#expanded-image)').forEach(function (image) {
+                image.addEventListener('click', function () { expandedImage.src = image.currentSrc || image.src; expandedImage.alt = image.alt; viewer.classList.add('is-open'); closeButton.focus(); });
+            });
+            closeButton.addEventListener('click', closeViewer);
+            viewer.addEventListener('click', function (event) { if (event.target === viewer) closeViewer(); });
+            document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeViewer(); });
+        }());
+    </script>
+    <script src="security.js"></script>
+</body>
+</html>

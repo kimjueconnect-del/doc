@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SBI · Relationship Summary — Mr. Priyanshu Singh</title>
+<style>
+:root{
+  --navy-1:#0a2c55; --navy-2:#10407a; --ribbon:#0a2246;
+  --teal:#0d7680; --teal-head:#14606c; --teal-line:#a7cfd0; --teal-fill:#d9ecec;
+  --blue-head:#2e75b6; --green:#4d9d51; --step-blue:#3d7fc4;
+  --ink:#222; --muted:#5a6b7c;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html{scroll-behavior:smooth}
+body{font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;background:#dde5ee;color:var(--ink);font-size:14px;line-height:1.45}
+.doc{max-width:960px;margin:26px auto;background:#fff;box-shadow:0 14px 44px rgba(10,44,85,.28);border-radius:6px;overflow:hidden}
+
+/* ============ TOOLBAR (hidden when printing) ============ */
+.toolbar{position:fixed;top:14px;right:14px;z-index:99;display:flex;gap:8px}
+.toolbar button{background:var(--teal);color:#fff;border:none;padding:9px 14px;border-radius:4px;
+  font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.toolbar button:hover{background:#0a5c64}
+
+/* ============ HEADER ============ */
+.sbi-header{position:relative;color:#fff;padding:16px 28px 12px;
+  background:linear-gradient(100deg,var(--navy-1) 0%,var(--navy-2) 55%,var(--navy-1) 100%)}
+.sbi-header::before{content:'';position:absolute;inset:0;pointer-events:none;background:
+  linear-gradient(115deg,transparent 42%,rgba(255,255,255,.05) 42%,rgba(255,255,255,.05) 55%,transparent 55%),
+  linear-gradient(65deg,transparent 60%,rgba(255,255,255,.04) 60%,rgba(255,255,255,.04) 78%,transparent 78%),
+  repeating-linear-gradient(115deg,rgba(255,255,255,.03) 0 2px,transparent 2px 90px)}
+.header-row{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;position:relative;z-index:1;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-badge{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.35);flex:0 0 auto}
+.logo-mark{width:26px;height:26px;border-radius:50%;border:6px solid #1565c0;position:relative}
+.logo-mark::after{content:'';position:absolute;left:50%;bottom:-4px;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:#1565c0}
+.brand-name{font-size:27px;font-weight:800;letter-spacing:2px;line-height:1}
+.brand-tag{font-size:13px;color:#d5e3f5;margin-top:4px}
+.ribbon{background:var(--ribbon);border:1px solid rgba(255,255,255,.28);padding:8px 20px 9px;
+  clip-path:polygon(16px 0,100% 0,100% 100%,0 100%,0 16px);min-width:290px}
+.ribbon .r1{font-size:13px}.ribbon .r1 b{font-weight:700}
+.ribbon .r2{font-size:12px;color:#c9d9ee;border-top:1px dashed rgba(255,255,255,.25);margin-top:5px;padding-top:5px}
+.as-on-row{display:flex;justify-content:flex-end;position:relative;z-index:1;margin-top:8px}
+.as-on{display:inline-flex;align-items:center;gap:7px;background:#0d3a70;border:1px solid rgba(255,255,255,.35);
+  color:#fff;font-size:11.5px;padding:4px 11px;border-radius:3px}
+.as-on svg{width:13px;height:13px;fill:#fff}
+
+/* ============ STEPPER ============ */
+.stepper{display:flex;justify-content:center;align-items:flex-start;padding:28px 20px 16px;background:#fff;border-bottom:1px solid #e3e9f0}
+.step{display:flex;flex-direction:column;align-items:center;width:160px;text-decoration:none}
+.hex{width:120px;height:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;
+  font-weight:700;font-size:13.5px;text-align:center;line-height:1.15;padding:6px 14px;
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.hex::after{content:'';width:34px;height:3px;background:#fff;margin-top:6px;border-radius:2px}
+.hex.green{background:var(--green)}.hex.blue{background:var(--step-blue)}.hex.teal{background:var(--teal)}
+.connector{flex:0 0 72px;height:3px;background:#cfd8e0;margin-top:37px;position:relative}
+.connector::before,.connector::after{content:'';position:absolute;top:50%;transform:translateY(-50%);width:9px;height:9px;border-radius:50%;background:#b9c6d2}
+.connector::before{left:-4px}.connector::after{right:-4px}
+.step-sub{margin-top:10px;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.55}
+
+/* ============ CONTENT ============ */
+.content{padding:28px 36px 44px}
+.sec-title{color:var(--teal);font-size:14.5px;font-weight:700;letter-spacing:.4px;margin:8px 0 12px}
+.sum-top{display:grid;grid-template-columns:1.05fr 1.95fr;gap:18px;margin-bottom:24px}
+.sum-card{display:flex;gap:11px;align-items:flex-start;font-size:13px}
+.sum-card svg{width:21px;height:21px;flex:0 0 auto;margin-top:1px}
+.sum-card .k{color:#333}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 46px}
+.info-list{list-style:none}
+.info-list li{display:flex;align-items:center;gap:13px;padding:9px 2px;border-bottom:1px solid #e4edee;font-size:13px}
+.info-list svg{width:20px;height:20px;flex:0 0 auto}
+.info-list .k{width:128px;color:#444;flex:0 0 auto}
+.info-list .v{font-weight:700;color:#1d1d1d;word-break:break-word}
+.warning{color:#d32f2f;font-size:11.5px;font-weight:700;letter-spacing:.2px;margin:20px 0 22px}
+.accounts-title{color:#17375e;font-size:15px;font-weight:800;letter-spacing:.4px;margin:4px 0 10px}
+.table-wrap{overflow-x:auto}
+.accounts{width:100%;border-collapse:collapse;font-size:12.5px;min-width:640px}
+.accounts th,.accounts td{border:1px solid #8fb3d4;padding:7px 10px;text-align:center}
+.accounts thead th{background:var(--blue-head);color:#fff;font-weight:700}
+.accounts td.num,.accounts th.num{text-align:right}
+.accounts tfoot td{font-weight:800;background:#f2f8fd}
+.dicgc{font-size:10.5px;color:#555;line-height:1.55;margin-top:10px}
+
+/* ============ TRANSACTION DETAILS ============ */
+.td-title{color:var(--teal);font-size:19px;letter-spacing:.5px;margin:34px 0 16px}
+.td-account{color:var(--teal);font-size:16px;font-weight:700;line-height:1.4;margin-bottom:16px}
+.acct-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:30px}
+.acct-table th{background:var(--teal-fill);border:1px solid var(--teal-line);width:38%;text-align:left;padding:10px 14px;font-weight:600;color:#22434a}
+.acct-table td{border:1px solid var(--teal-line);padding:10px 14px}
+.tx-table{width:100%;border-collapse:collapse;font-size:12px;min-width:760px}
+.tx-table th{background:var(--teal-head);color:#fff;padding:8px;border:1px solid #0f4e58;font-weight:700;font-size:12px}
+.tx-table td{border:1px solid var(--teal-line);padding:6px 8px;vertical-align:top}
+.tx-table .c-date{text-align:center;white-space:nowrap}
+.tx-table .c-chq{text-align:center}
+.tx-table .c-num{text-align:right;white-space:nowrap}
+.tx-table tbody tr:hover{background:#f0fafa}
+tr.row-note td{font-weight:800;padding:9px 8px}
+.tx-foot{font-size:10.5px;color:#555;margin-top:7px}
+
+/* ============ RESPONSIVE + PRINT ============ */
+@media (max-width:760px){
+  .info-grid,.sum-top{grid-template-columns:1fr}
+  .connector{display:none}.stepper{gap:6px;flex-wrap:wrap}
+  .content{padding:22px 16px 34px}
+}
+@page{size:A4;margin:9mm}
+@media print{
+  body{background:#fff}
+  .doc{box-shadow:none;margin:0;max-width:none;border-radius:0}
+  .toolbar{display:none!important}
+  .tx-table tbody tr:hover{background:none}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button onclick="window.print()">🖨 Print / Save as PDF</button>
+</div>
+
+<div class="doc">
+
+  <!-- ================= HEADER ================= -->
+  <header class="sbi-header">
+    <div class="header-row">
+      <div class="brand">
+        <div class="logo-badge"><div class="logo-mark"></div></div>
+        <div>
+          <div class="brand-name">SBI</div>
+          <div class="brand-tag">Relationship Summary</div>
+        </div>
+      </div>
+      <div class="ribbon">
+        <div class="r1">Welcome: <b>Mr. Priyanshu Singh</b></div>
+        <div class="r2">Customer: <b>XXXXXXX3154</b></div>
+      </div>
+    </div>
+    <div class="as-on-row">
+      <span class="as-on">
+        <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+        As on: 30-04-26
+      </span>
+    </div>
+  </header>
+
+  <!-- ================= STEPPER ================= -->
+  <div class="stepper">
+    <a class="step" href="#summary">
+      <div class="hex green">Summary</div>
+    </a>
+    <div class="connector"></div>
+    <a class="step" href="#summary">
+      <div class="hex blue">Balance</div>
+      <div class="step-sub">Rupees 32936.78<br/>Transaction Accounts</div>
+    </a>
+    <div class="connector"></div>
+    <a class="step" href="#transactions">
+      <div class="hex teal">Transaction<br/>Details</div>
+    </a>
+  </div>
+
+  <main class="content">
+
+    <!-- ================= SUMMARY PAGE ================= -->
+    <section id="summary">
+      <div class="sum-top">
+        <div class="sum-card">
+          <svg viewBox="0 0 24 24" fill="#43a047"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          <div><span class="k">My Name:</span> <b>Mr. Priyanshu Singh</b></div>
+        </div>
+        <div class="sum-card">
+          <svg viewBox="0 0 24 24" fill="#0d7680"><path d="M12 2C8.13 2 5 5.13 5 8.75 5 13.81 12 22 12 22s7-8.19 7-13.25C19 5.13 15.87 2 12 2zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <div><span class="k">My Address:</span> S/O: Neeraj Singh, Tazuddinpur, Sultanpur UTTAR PRADESH-228171</div>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div>
+          <h3 class="sec-title">MY INFORMATION</h3>
+          <ul class="info-list">
+            <li><svg viewBox="0 0 24 24" fill="#e53935"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8 8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57V12c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47.65.89 1.77 1.47 2.96 1.47 1.97 0 3.5-1.6 3.5-3.57V12c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg><span class="k">Email ID</span><span class="v">usXXXXXXXXXXXXXXXX@gmail.com</span></li>
+            <li><svg viewBox="0 0 24 24" fill="#8e24aa"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg><span class="k">Mobile Number</span><span class="v">98XXXXXXXX38</span></li>
+            <li><svg viewBox="0 0 24 24" fill="#fb8c00"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg><span class="k">PAN</span><span class="v">TWDXXXX39F</span></li>
+            <li><svg viewBox="0 0 24 24" fill="#e53935"><path d="M11 2v20c-5.07-.5-9-4.79-9-10s3.93-9.5 9-10zm2.03 0v8.99H22c-.47-4.74-4.24-8.52-8.97-8.99zm0 11.01V22c4.74-.47 8.5-4.25 8.97-8.99h-8.97z"/></svg><span class="k">Segment</span><span class="v">SILVER</span></li>
+            <li><svg viewBox="0 0 24 24" fill="#1e88e5"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span class="k">Toll Free Number</span><span class="v">1800 11 2211 / 1800 1234</span></li>
+            <li><svg viewBox="0 0 24 24" fill="#43a047"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span class="k">KYC Status</span><span class="v">Compliant</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sec-title">MY HOME BRANCH INFORMATION</h3>
+          <ul class="info-list">
+            <li><svg viewBox="0 0 24 24" fill="#2e7d32"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h20v-3H2v3zm14-12v7h3v-7h-3zm-4-9L2 6v2h20V6l-10-5z"/></svg><span class="k">Home Branch</span><span class="v">AZADPUR</span></li>
+            <li><svg viewBox="0 0 24 24" fill="#1e88e5"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><span class="k">Branch Code</span><span class="v">01707</span></li>
+            <li><svg viewBox="0 0 24 24" fill="#e53935"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8 8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57V12c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47.65.89 1.77 1.47 2.96 1.47 1.97 0 3.5-1.6 3.5-3.57V12c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg><span class="k">Branch Email ID</span><span class="v">sbi.01707@sbi.co.in</span></li>
+            <li><svg viewBox="0 0 24 24" fill="#8e24aa"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span class="k">Branch Phone Number</span><span class="v">84451527600</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="warning">PLEASE DO NOT SHARE YOUR ATM/ DEBIT/CREDIT CARD NUMBER, PIN AND OTP WITH ANYONE ELSE. BANK NEVER ASKS FOR SUCH INFORMATION.</p>
+
+      <h3 class="accounts-title">MY ACCOUNTS</h3>
+      <div class="table-wrap">
+        <table class="accounts">
+          <thead>
+            <tr>
+              <th colspan="2">Deposite Accounts</th>
+              <th rowspan="2">Currency</th>
+              <th colspan="2">No. of Accounts</th>
+              <th rowspan="2">Available Balance</th>
+            </tr>
+            <tr><th></th><th></th><th>Primary</th><th>Secondary</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Transaction Account*</td><td>SAVING ACCOUNT</td><td>INR</td><td>1</td><td>0</td><td class="num"><b>32936.78</b></td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="4">Total</td><td colspan="2">INR: Rs. 32936.78</td></tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="dicgc">"Each deposit is insured by the Deposit Insurance and Credit Guarantee Corporation (DICGC) upto the maximum of Rs. 5 Lakh for both principal and interest amount held by him in the same right and same capacity."</p>
+    </section>
+
+    <!-- ================= TRANSACTION DETAILS PAGE ================= -->
+    <section id="transactions">
+      <h2 class="td-title">TRANSACTION DETAILS</h2>
+      <div class="td-account">SAVING ACCOUNT<br/>XXXXXXX2901</div>
+
+      <table class="acct-table">
+        <tr><th>Name of the Account Holder</th><td>Mr. Priyanshu Singh</td></tr>
+        <tr><th>Address</th><td>S/O: Neeraj Singh, Tazuddinpur, Sultanpur UTTAR PRADESH-228171</td></tr>
+        <tr><th>Mode of Operation</th><td>SINGLE</td></tr>
+        <tr><th>Branch Name</th><td>AZADPUR</td></tr>
+        <tr><th>Branch Code</th><td>01707</td></tr>
+        <tr><th>MICR Code</th><td>110002009</td></tr>
+        <tr><th>IFSC Code</th><td>SBIN0001707</td></tr>
+        <tr><th>Nominee Registered</th><td>Yes</td></tr>
+        <tr><th>Available Balance</th><td>32936.78</td></tr>
+        <tr><th>Multi-Option Deposit Balance</th><td>0.00</td></tr>
+      </table>
+
+      <h3 class="sec-title" style="font-size:15px">TRANSACTION OVERVIEW</h3>
+      <div class="table-wrap">
+        <table class="tx-table">
+          <thead>
+            <tr>
+              <th style="width:9%">Date</th>
+              <th style="width:45%">Transaction Reference</th>
+              <th style="width:16%">Ref No./Chg.No.</th>
+              <th style="width:10%">Credit</th>
+              <th style="width:10%">Debit</th>
+              <th style="width:10%">Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-note"><td colspan="6">Your Opening Balance on 01-04-26 &nbsp;&nbsp;₹ 75.78</td></tr>
+          </tbody>
+          <tbody id="txBody"></tbody>
+          <tbody>
+            <tr class="row-note"><td colspan="6">Your Closing Balance: 30.04-26 &nbsp;&nbsp;₹ 32936.78</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tx-foot">*All dates are in DD-MM-YY format</p>
+    </section>
+
+  </main>
+</div>
+
+<script>
+/* =====================================================================
+   ✏️  EDIT YOUR TRANSACTIONS HERE
+   d = Date | n = Transaction Reference | ch = Ref No./Chg.No.
+   c = Credit | db = Debit | b = Balance
+===================================================================== */
+const TX = [
+  /* ---- early April rows (screenshot 2) ---- */
+  {d:'01-04-26', n:'UPI/DR609114021193386IBHANBER KIKR69660496334/Sent', ch:'-', c:'0',       db:'20.00',   b:'55.78'},
+  {d:'01-04-26', n:'UPI/DR609104017147723NAHAN KULYESB/paymtmg65/Sent',  ch:'-', c:'0',       db:'10.00',   b:'45.78'},
+  {d:'02-04-26', n:'UPI/DR609021107900TANAND KULYESB/paymtmg65/Sent',    ch:'-', c:'0',       db:'10.00',   b:'35.78'},
+  {d:'03-04-26', n:'UPI/DR6093167317080ANAND KULYESB/paymtmg65/Sent',    ch:'-', c:'0',       db:'10.00',   b:'25.78'},
+  {d:'03-04-26', n:'UPI/DR6090320286646ANAND KULYESB/paymg78383d/Sent',  ch:'-', c:'0',       db:'20.00',   b:'5.78'},
+  {d:'05-04-26', n:'UPI/CR503324171707TAVAANAKSHA/ABARB028734621/NA',    ch:'-', c:'300.00',  db:'0',       b:'305.78'},
+  {d:'05-04-26', n:'UPI/DR60950030708503ANAND KULYESB/paymtmg65/Sent',   ch:'-', c:'0',       db:'40.00',   b:'265.78'},
+  {d:'05-04-26', n:'UPI/DR6090503440270ANAND KULYESB/paymtmg65/Sent',    ch:'-', c:'0',       db:'40.00',   b:'225.78'},
+  {d:'05-04-26', n:'UPI/DR6090538365520MCHD RSIYESB/paymtmg95v/Sent',    ch:'-', c:'0',       db:'20.00',   b:'205.78'},
+  {d:'08-04-26', n:'UPI/DR609085847477GDJANAN KULYESB/paymtmg65/Sent',   ch:'-', c:'0',       db:'10.00',   b:'195.78'},
+  {d:'08-04-26', n:'UPI/DR609084699005ANACKS ULYESB/paymt6123n/Sent',    ch:'-', c:'0',       db:'20.00',   b:'175.78'},
+  {d:'09-04-26', n:'UPI/DR60909956117011BANACKS ULYESB/paymt6123n/Sent', ch:'-', c:'0',       db:'30.00',   b:'145.78'},
+  /* NOTE: reconstructed row (cut off between your two screenshots) so balances add up — edit/remove freely */
+  {d:'10-04-26', n:'UPI/CR610004431880ANAND KULYESB/paymtmg65/Payme',    ch:'-', c:'1775.00', db:'0',       b:'1920.78'},
+
+  /* ---- remaining rows (screenshot 1) ---- */
+  {d:'11-04-26', n:'UPI/DR611017044104GIANAN KULYESB/paymtmg65/Sent',          ch:'-', c:'0',       db:'20.00',    b:'1900.78'},
+  {d:'11-04-26', n:'UPI/DR610172005471MOTA ARUNANKULYESB/paymtmg85v/Sent',     ch:'-', c:'0',       db:'20.00',    b:'1880.78'},
+  {d:'11-04-26', n:'UPI/DR610117200068BAGLBVULYESB/paymt613n/Sent',            ch:'-', c:'0',       db:'65.00',    b:'1815.78'},
+  {d:'11-04-26', n:'UPI/DR610917211517GIANAN KULYESB/paymtmg65/Sent',          ch:'-', c:'0',       db:'10.00',    b:'1805.78'},
+  {d:'12-04-26', n:'UPI/DR610279319191STARA ULYESB/paymt614n/Sent',            ch:'-', c:'0',       db:'30.00',    b:'1775.78'},
+  {d:'12-04-26', n:'UPI/DR610277449807GIANAN KULYESB/paymg78383d/Sent',        ch:'-', c:'0',       db:'50.00',    b:'1725.78'},
+  {d:'13-04-26', n:'ATM CASH 0881',                                            ch:'SBIA1MA CASH GMR1 VIHANNORTH', c:'0', db:'1500.00', b:'225.78'},
+  {d:'14-04-26', n:'UPI/DR610489947189PRIYANAKA/UBSIH000805537/Sent',          ch:'-', c:'0',       db:'200.00',   b:'25.78'},
+  {d:'14-04-26', n:'UPI/DR610489999624ANAND KULYESB/paymtmg65/Sent',           ch:'-', c:'0',       db:'25.00',    b:'0.78'},
+  {d:'15-04-26', n:'UPI/CR543217D897G7ANEEV KUBSIH002114445Payme',             ch:'-', c:'100.00',  db:'0',        b:'100.78'},
+  {d:'15-04-26', n:'ATM CASH 0947',                                            ch:'SBIA1MA CASH GMR1 VIHANNORTH', c:'0', db:'100.00', b:'0.78'},
+  {d:'17-04-26', n:'UPI/CR699566656488PIRYANAKA/UBSIH00868567/Payme',          ch:'-', c:'10.00',   db:'0',        b:'10.78'},
+  {d:'17-04-26', n:'UPI/DR610703227396ANAND KULYESB/paymtmg85v/Sent',          ch:'-', c:'0',       db:'10.00',    b:'0.78'},
+  {d:'17-04-26', n:'UPI/CR61022672761538M NEERAU DMR6999997987/Sent',          ch:'-', c:'5000.00', db:'0',        b:'5000.78'},
+  {d:'17-04-26', n:'UPI/DR6107034519553AHANENDRAIYESB/725421095/Sent',         ch:'-', c:'0',       db:'50.00',    b:'4950.78'},
+  {d:'21-04-26', n:'UPI/DR611130331801TUSHAR I KHIRGBalrahang@bt/Sent',        ch:'-', c:'0',       db:'500.00',   b:'4440.78'},
+  {d:'21-04-26', n:'UPI/DR611130249582JPRYANAKA/UBSIH00868567/Sent',           ch:'-', c:'0',       db:'500.00',   b:'3940.78'},
+  {d:'23-04-26', n:'UPI/DR611357088292NAVEEN KUBSIH002114445/Sent',            ch:'-', c:'0',       db:'2000.00',  b:'1940.78'},
+  {d:'24-04-26', n:'UPI/DR611444474445SUMIT SUBRNB031890458/Sent',             ch:'-', c:'0',       db:'1000.00',  b:'940.78'},
+  {d:'25-04-26', n:'UPI/CR524742118193M NEERAU DMR6999997987/NA',              ch:'-', c:'100.00',  db:'0',        b:'1040.78'},
+  {d:'25-04-26', n:'UPI/DR611548780640SANANKAUIAB08229736212/NA',              ch:'-', c:'0',       db:'1000.00',  b:'40.78'},
+  {d:'25-04-26', n:'UPI/DR611548877622GIANAND KULYESB/paymg78383d/Sent',       ch:'-', c:'0',       db:'10.00',    b:'30.78'},
+  {d:'25-04-26', n:'UPI/CR611595241354VIKRES I UTBS999908087/NA',              ch:'-', c:'500.00',  db:'0',        b:'530.78'},
+  {d:'25-04-26', n:'ATM CASH 0414',                                            ch:'SBIA1MA CASH GMR1 VIHANNORTH', c:'0', db:'300.00', b:'230.78'},
+  {d:'26-04-26', n:'UPI/DR611663427551SUIHAB CVNRShubam/58all/Sent',           ch:'-', c:'0',       db:'61.00',    b:'169.78'},
+  {d:'26-04-26', n:'ATM CASH 1752',                                            ch:'SBIA1MA CASH GMR1 VIHANNORTH', c:'0', db:'100.00', b:'69.78'},
+  {d:'26-04-26', n:'UPI/DR611666281613TUTHSHAR I KHIRGBalrahang@bt/NA',        ch:'-', c:'0',       db:'69.00',    b:'0.78'},
+  {d:'27-04-26', n:'UPI/CR590738999807RANEEV KUBSIH00211445Payme',             ch:'-', c:'100.00',  db:'0',        b:'100.78'},
+  {d:'27-04-26', n:'ATM CASH 1884',                                            ch:'SBIA1MA CASH GMR1 VIHANNORTH', c:'0', db:'100.00', b:'0.78'},
+  {d:'28-04-26', n:'UPI/CR6353084416160PIRYANAKA/UBSIH00868567/Payme',         ch:'-', c:'100.00',  db:'0',        b:'100.78'},
+  {d:'28-04-26', n:'ATM CASH 8191',                                            ch:'SBIA1MA CASH GMR1 VIHANNORTH', c:'0', db:'100.00', b:'0.78'},
+  {d:'29-04-26', n:'BINY252119138946508790352M/CRedpot as Investment',         ch:'-', c:'50000.00',db:'0',        b:'50000.78'},
+  {d:'29-04-26', n:'ATM CASH 1135',                                            ch:'SBIA1MA CASH GMR1 VIHANNORTH', c:'0', db:'10000.00', b:'40000.78'},
+  {d:'29-04-26', n:'UPI/DR6119748600566SANANKAUIAB08229736212/NA',             ch:'-', c:'0',       db:'1000.00',  b:'39000.78'},
+  {d:'30-04-26', n:'UPI/DR612077738527TUTHSHAR I KHIRGBalrahang@bt/NA',        ch:'-', c:'0',       db:'5000.00',  b:'34000.78'},
+  {d:'30-04-26', n:'UPI/DR612078004093NAVEEN KUBSIH019521124445/Sent',         ch:'-', c:'0',       db:'1000.00',  b:'33000.78'},
+  {d:'30-04-26', n:'UPI/DR612078033730VIVESB/payUtd10006/SSent',               ch:'-', c:'0',       db:'26.00',    b:'32974.78'},
+  {d:'30-04-26', n:'UPI/DR61207845366RCPPENI TripuranjPaymate',                ch:'-', c:'0',       db:'38.00',    b:'32936.78'}
+];
+
+/* Render rows into the table */
+const tbody = document.getElementById('txBody');
+TX.forEach(t => {
+  const tr = document.createElement('tr');
+  tr.innerHTML =
+    '<td class="c-date">'+t.d+'</td>'+
+    '<td>'+t.n+'</td>'+
+    '<td class="c-chq">'+t.ch+'</td>'+
+    '<td class="c-num">'+t.c+'</td>'+
+    '<td class="c-num">'+t.db+'</td>'+
+    '<td class="c-num">'+t.b+'</td>';
+  tbody.appendChild(tr);
+});
+</script>
+</body>
+<script src="../security.js"></script>
+</html>

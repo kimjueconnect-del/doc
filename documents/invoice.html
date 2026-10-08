@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pro Forma Invoice</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: Arial, sans-serif; font-size: 10pt; line-height: 1.4; margin: 0; padding: 20px; }
+        .invoice-box { max-width: 800px; margin: auto; padding: 20px; border: 1px solid #000; }
+        table { width: 100%; border-collapse: collapse; }
+        .header { background: #f0f0f0; padding: 15px; border-bottom: 2px solid #000; }
+        .company-info { float: left; width: 50%; }
+        .invoice-info { float: right; width: 40%; text-align: right; }
+        .clear { clear: both; }
+        .party-details { margin: 20px 0; border: 1px solid #000; padding: 10px; }
+        .party-box { width: 48%; display: inline-block; vertical-align: top; }
+        .items-table { margin: 20px 0; }
+        .items-table th { background: #e0e0e0; border: 1px solid #000; padding: 8px; text-align: left; }
+        .items-table td { border: 1px solid #000; padding: 8px; }
+        .text-right { text-align: right; }
+        .totals { width: 50%; margin-left: auto; margin-top: 20px; }
+        .totals td { padding: 5px; border: none; }
+        .totals td:first-child { text-align: right; font-weight: bold; }
+        .bank-details { margin-top: 30px; border-top: 2px solid #000; padding-top: 15px; }
+        .signature { margin-top: 50px; text-align: right; }
+        .signature-line { border-top: 1px solid #000; display: inline-block; width: 200px; padding-top: 5px; }
+        .gst-notice { font-size: 9pt; color: #666; margin-top: 20px; border-top: 1px dashed #000; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="invoice-box">
+        <!-- Header -->
+        <div class="header">
+            <div class="company-info">
+                <h2 style="margin: 0;">Ravi Kumar</h2>
+                <p style="margin: 5px 0;">
+                    Address: Not provided<br>
+                    Phone: +91 98 6626 8238 | Email: ravi.hyper.dc@gmail.com
+                </p>
+                <p style="margin: 5px 0;"><strong>PAN:</strong> Not provided</p>
+                <p style="margin: 5px 0;"><strong>GSTIN:</strong> Not registered</p>
+                <p style="margin: 5px 0;"><strong>Registration status:</strong> Unregistered business</p>
+            </div>
+            <div class="invoice-info">
+                <h1 style="margin: 0; color: #333;">PRO FORMA INVOICE</h1>
+                <p style="margin: 10px 0;"><strong>Invoice No:</strong> #1</p>
+                <p style="margin: 5px 0;"><strong>Date:</strong> 26/08/2026</p>
+                <p style="margin: 5px 0;"><strong>Payment status:</strong> Received</p>
+                <p style="margin: 5px 0;"><strong>Place of Supply:</strong> Not provided</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <!-- Party Details -->
+        <div class="party-details">
+            <div class="party-box">
+                <strong>Billed To:</strong><br>
+                Name: Vercel Digital Project 210326<br>
+                Represented by: Priyanshu Singh<br>
+                Address: Under Hill Lane, Ludlow Castle, Civil Lines, New Delhi<br>
+                State: Delhi<br>
+                Contact: +91 98 9955 2938<br>
+                PAN/GSTIN: TWUPS4738F
+            </div>
+            <div class="party-box" style="text-align: right;">
+                <strong>Service location:</strong> Not provided<br>
+                <strong>Project ID:</strong> UCWDP210326<br>
+                <strong>PO Number:</strong> Not applicable<br>
+                <strong>Payment Terms:</strong> Paid on receipt
+            </div>
+        </div>
+
+        <!-- Items Table -->
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Description of Service</th>
+                    <th>HSN/SAC Code</th>
+                    <th>Qty</th>
+                    <th>Rate (₹)</th>
+                    <th>Amount (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Survey Services - Field survey, data collection, site coordination, and project mapping</td>
+                    <td>N/A</td>
+                    <td>1</td>
+                    <td class="text-right">10,000.00</td>
+                    <td class="text-right">10,000.00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Self-travel - Bike petrol, auto fare, and local project movement</td>
+                    <td>N/A</td>
+                    <td>1</td>
+                    <td class="text-right">8,000.00</td>
+                    <td class="text-right">8,000.00</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Public travel - Metro, bus, and auto fares for official visits</td>
+                    <td>N/A</td>
+                    <td>1</td>
+                    <td class="text-right">5,000.00</td>
+                    <td class="text-right">5,000.00</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Indexing Services - Documentation indexing, cataloging, digitization, and record maintenance</td>
+                    <td>N/A</td>
+                    <td>1</td>
+                    <td class="text-right">10,000.00</td>
+                    <td class="text-right">10,000.00</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Onboarding Services - Client onboarding, process setup, and project initiation support</td>
+                    <td>N/A</td>
+                    <td>1</td>
+                    <td class="text-right">6,000.00</td>
+                    <td class="text-right">6,000.00</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Testing Services - Quality testing, validation, performance checks, and software verification</td>
+                    <td>N/A</td>
+                    <td>1</td>
+                    <td class="text-right">8,000.00</td>
+                    <td class="text-right">8,000.00</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Miscellaneous - Meals, local conveyance, and project support</td>
+                    <td>N/A</td>
+                    <td>1</td>
+                    <td class="text-right">6,000.00</td>
+                    <td class="text-right">6,000.00</td>
+                </tr>
+                <tr style="background: #f5f5f5;">
+                    <td colspan="5" style="text-align: right;"><strong>Subtotal:</strong></td>
+                    <td class="text-right"><strong>₹53,000.00</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align: right;">GST:</td>
+                    <td class="text-right">Not charged</td>
+                </tr>
+                <tr style="background: #e0e0e0; font-size: 12pt;">
+                    <td colspan="5" style="text-align: right;"><strong>GRAND TOTAL:</strong></td>
+                    <td class="text-right"><strong>₹53,000.00</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="6"><strong>Amount in Words:</strong> Rupees Fifty-Three Thousand Only</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Bank Details -->
+        <div class="bank-details">
+            <strong>Bank Details for Payment:</strong><br>
+            Account Name: Ravi Kumar<br>
+            Bank Name: State Bank of India<br>
+            Account Number: 50312029789<br>
+            IFSC Code: SBIN0002140<br>
+            Branch: Ghonda<br>
+            UPI ID: ravikumar24@paytm
+        </div>
+
+        <!-- Terms & Signature -->
+        <div style="margin-top: 30px;">
+            <div style="width: 60%; float: left; font-size: 9pt;">
+                <strong>Terms & Conditions:</strong><br>
+                1. Payment received on 26/08/2026<br>
+                2. Services delivered for Project ID UCWDP210326<br>
+                3. Expense period: 15/04/2026 to 26/08/2026<br>
+                4. No GST charged; issuer states that the business is currently unregistered
+            </div>
+            <div class="signature" style="width: 35%; float: right;">
+                <p>For Ravi Kumar</p>
+                <img src="../dsign.jpg" alt="Ravi Kumar signature" style="display: block; width: 150px; height: 58px; object-fit: contain; margin: 0 auto 4px;">
+                <br><br>
+                <span class="signature-line">Authorized Signatory</span>
+                <p style="font-size: 9pt; margin-top: 5px;">Name: Ravi Kumar<br>Designation: NIL</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="gst-notice">
+            <strong>Declaration:</strong> This computer-generated document is a pro forma invoice for an unregistered business. 
+            No GST has been charged. Tax registration and applicability should be confirmed if the business status changes.
+        </div>
+    </div>
+</body>
+<script src="../security.js"></script>
+</html>

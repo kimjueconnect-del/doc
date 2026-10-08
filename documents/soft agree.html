@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Software Development Agreement</title>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .document {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1e3c72;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            color: #1e3c72;
+            font-size: 24pt;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            color: #666;
+            font-size: 11pt;
+        }
+        .parties {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .party-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .party-label {
+            font-size: 9pt;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        .section-title {
+            color: #1e3c72;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .deliverable-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #00c853;
+        }
+        .deliverable-title {
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 8px;
+        }
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .tech-badge {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 9pt;
+        }
+        .milestone-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .milestone-table th {
+            background: #1e3c72;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        .milestone-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .milestone-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .signature-block {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        .sign-area {
+            text-align: center;
+        }
+        .sign-line {
+            border-top: 1px solid #333;
+            margin-top: 60px;
+            padding-top: 10px;
+        }
+        .ip-section {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <h1>SOFTWARE DEVELOPMENT AGREEMENT</h1>
+            <div class="subtitle">Custom Delivery Management Platform Development</div>
+            <div class="subtitle">Project ID: UCWDP210326 | University Collaboration</div>
+        </div>
+        
+        <div class="parties">
+            <div class="party-box">
+                <div class="party-label">Client</div>
+                <p><strong>Vercel Digital Project 210326</strong></p>
+                <p>Represented by: Priyanshu Singh</p>
+                <p>Email: usethisforchanges@gmail.com</p>
+                <p>Phone: +91 98 9955 2938</p>
+            </div>
+            <div class="party-box">
+                <div class="party-label">Developer</div>
+                <p><strong>University of Chicago</strong></p>
+                <p>Computer Science Department</p>
+                <p>Represented by: Prof. Hank Hoffmann, Department Chair</p>
+                <p>Address: 5730 S Ellis Avenue, Chicago, IL 60637</p>
+                <p>Email: cswebmaster@cs.uchicago.edu</p>
+                    <p>Phone: +1 773-123-4567</p>
+                    <p>Office: 123 Computer Science Building</p>
+                    <p>Website: cs.uchicago.edu</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">1. PROJECT SCOPE & DELIVERABLES</div>
+            <p>The Developer agrees to design, develop, and deliver the following software components:</p>
+            
+            <div class="deliverable-item">
+                <div class="deliverable-title">1.1 Complex Backend System</div>
+                <p>Multi-tier architecture with microservices, RESTful APIs, GraphQL endpoints, WebSocket support, authentication services, and business logic layer.</p>
+                <div class="tech-list">
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Redis</span>
+                    <span class="tech-badge">Docker</span>
+                </div>
+            </div>
+            
+            <div class="deliverable-item">
+                <div class="deliverable-title">1.2 Vendor Portal (Frontend)</div>
+                <p>Web-based dashboard for vendor management, inventory control, order processing, and analytics.</p>
+                <div class="tech-list">
+                    <span class="tech-badge">React.js</span>
+                    <span class="tech-badge">Redux</span>
+                    <span class="tech-badge">Material-UI</span>
+                    <span class="tech-badge">Chart.js</span>
+                </div>
+            </div>
+            
+            <div class="deliverable-item">
+                <div class="deliverable-title">1.3 Driver Application (Frontend)</div>
+                <p>Mobile-responsive PWA for delivery drivers with real-time navigation, route display, and delivery confirmation.</p>
+                <div class="tech-list">
+                    <span class="tech-badge">React Native</span>
+                    <span class="tech-badge">PWA</span>
+                    <span class="tech-badge">GPS Integration</span>
+                    <span class="tech-badge">Offline Support</span>
+                </div>
+            </div>
+            
+            <div class="deliverable-item">
+                <div class="deliverable-title">1.4 User Application (Frontend)</div>
+                <p>Customer-facing platform for order placement, tracking, payments, and reviews.</p>
+                <div class="tech-list">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">Stripe</span>
+                    <span class="tech-badge">Socket.io</span>
+                    <span class="tech-badge">PWA</span>
+                </div>
+            </div>
+            
+            <div class="deliverable-item">
+                <div class="deliverable-title">1.5 Calculation Engine</div>
+                <p>Dynamic pricing system with real-time computation, surge pricing, tax calculation, and discount management.</p>
+                <div class="tech-list">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">NumPy</span>
+                    <span class="tech-badge">Real-time Processing</span>
+                </div>
+            </div>
+            
+            <div class="deliverable-item">
+                <div class="deliverable-title">1.6 Routing Algorithm</div>
+                <p>AI-powered delivery route optimization using machine learning for multi-drop efficiency and traffic integration.</p>
+                <div class="tech-list">
+                    <span class="tech-badge">Machine Learning</span>
+                    <span class="tech-badge">Graph Theory</span>
+                    <span class="tech-badge">Dijkstra Algorithm</span>
+                    <span class="tech-badge">Traffic APIs</span>
+                </div>
+            </div>
+            
+            <div class="deliverable-item">
+                <div class="deliverable-title">1.7 Geospatial Mapping System</div>
+                <p>Custom Delhi map creation with vendor location indexing, zone polygon mapping, and geocoding services.</p>
+                <div class="tech-list">
+                    <span class="tech-badge">Mapbox</span>
+                    <span class="tech-badge">PostGIS</span>
+                    <span class="tech-badge">GeoJSON</span>
+                    <span class="tech-badge">Custom Tiles</span>
+                </div>
+            </div>
+            
+            <div class="deliverable-item">
+                <div class="deliverable-title">1.8 Payment Gateway Integration</div>
+                <p>Multi-provider payment system supporting cards, wallets, UPI, and international payments with PCI compliance.</p>
+                <div class="tech-list">
+                    <span class="tech-badge">Stripe</span>
+                    <span class="tech-badge">Razorpay</span>
+                    <span class="tech-badge">UPI</span>
+                    <span class="tech-badge">PCI-DSS</span>
+                </div>
+            </div>
+            
+            <div class="deliverable-item">
+                <div class="deliverable-title">1.9 Access Control & Admin Systems</div>
+                <p>Multi-level authentication, corporate access portal, admin dashboard, and role-based access control (RBAC).</p>
+                <div class="tech-list">
+                    <span class="tech-badge">JWT</span>
+                    <span class="tech-badge">OAuth2</span>
+                    <span class="tech-badge">RBAC</span>
+                    <span class="tech-badge">Audit Logging</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">2. PROJECT MILESTONES & PAYMENT</div>
+            <table class="milestone-table">
+                <thead>
+                    <tr>
+                        <th>Milestone</th>
+                        <th>Deliverable</th>
+                        <th>Amount</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Milestone 1</td>
+                        <td>Backend Architecture + Database Setup</td>
+                        <td>$1,400</td>
+                        <td>05/09/2026</td>
+                    </tr>
+                    <tr>
+                        <td>Milestone 2</td>
+                        <td>Three Frontend Applications (Vendor, Driver, User)</td>
+                        <td>$1,800</td>
+                        <td>10/09/2026</td>
+                    </tr>
+                    <tr>
+                        <td>Milestone 3</td>
+                        <td>Calculation Engine + Routing Algorithm</td>
+                        <td>$900</td>
+                        <td>15/09/2026</td>
+                    </tr>
+                    <tr>
+                        <td>Milestone 4</td>
+                        <td>Mapping System + Payment Integration</td>
+                        <td>$700</td>
+                        <td>20/09/2026</td>
+                    </tr>
+                    <tr>
+                        <td>Milestone 5</td>
+                        <td>Access Control + Testing + Deployment</td>
+                        <td>$600</td>
+                        <td>26/09/2026</td>
+                    </tr>
+                    <tr style="background: #1e3c72; color: white; font-weight: bold;">
+                        <td colspan="2">TOTAL DEVELOPMENT COST</td>
+                        <td>$5,400</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 15px; font-size: 10pt; color: #666;">
+                * Server costs of $1,500 billed separately. Total project value: $6,900.
+            </p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">3. INTELLECTUAL PROPERTY RIGHTS</div>
+            <div class="ip-section">
+                <p><strong>3.1 Ownership:</strong> Upon full payment, all source code, documentation, algorithms, and intellectual property rights shall be transferred to the Client.</p>
+                <p><strong>3.2 License:</strong> The Developer retains the right to use generic components, libraries, and frameworks developed during this project for other clients, excluding business logic specific to Client's operations.</p>
+                <p><strong>3.3 Third-Party:</strong> All third-party libraries and APIs used shall remain under their respective licenses.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">4. DELIVERY & ACCEPTANCE</div>
+            <p><strong>4.1 Source Code:</strong> Complete source code shall be delivered via secure Git repository with documentation.</p>
+            <p><strong>4.2 Documentation:</strong> Technical documentation, API references, deployment guides, and user manuals.</p>
+            <p><strong>4.3 Training:</strong> 2 sessions of knowledge transfer for Client's technical team.</p>
+            <p><strong>4.4 Acceptance:</strong> Client shall have 15 days to test and accept deliverables or provide rejection with specific defects.</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">5. WARRANTIES & SUPPORT</div>
+            <p><strong>5.1 Warranty:</strong> 90-day warranty period for bug fixes post-deployment.</p>
+            <p><strong>5.2 Support:</strong> Email support during business hours (US Central Time).</p>
+            <p><strong>5.3 Maintenance:</strong> Optional AMC available at 20% of project cost annually.</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">6. CONFIDENTIALITY</div>
+            <p>Both parties agree to maintain confidentiality of proprietary information, business data, and technical details disclosed during the project.</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">7. GOVERNING LAW</div>
+            <p>This Agreement shall be governed by the laws of the State of Illinois, USA, and the courts of Chicago shall have jurisdiction.</p>
+        </div>
+        
+        <div class="signature-block">
+            <div class="sign-area">
+                <p><strong>FOR CLIENT:</strong></p>
+                <p>Vercel Digital Project 210326</p>
+                <div class="sign-line">
+                    <img src="../asign.jpg" alt="Priyanshu Singh signature" style="display: block; width: 150px; height: 58px; object-fit: contain; margin: 0 auto 4px;">
+                    Priyanshu Singh<br>
+                    Date: 26/08/2026
+                </div>
+            </div>
+            <div class="sign-area">
+                <p><strong>FOR DEVELOPER:</strong></p>
+                <p>University of Chicago</p>
+                <div class="sign-line">
+                    Prof. Hank Hoffmann, Department Chair<br>
+                    Date: 26/08/2026
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../security.js"></script>
+</html>

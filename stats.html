@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Stats</title>
+    <style>
+        :root { --ink: #14221f; --muted: #65736d; --green: #1f705c; --lime: #dbe9a7; --orange: #e77c46; }
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 24px; background: #eef0e8; color: var(--ink); font: 14px/1.5 Arial, sans-serif; }
+        .page { max-width: 1040px; margin: auto; padding: clamp(26px, 6vw, 72px); background: #fff; box-shadow: 0 14px 40px rgba(20,34,31,.12); }
+        header { display: flex; justify-content: space-between; gap: 30px; align-items: end; padding-bottom: 24px; border-bottom: 2px solid var(--ink); }
+        .eyebrow { margin: 0 0 8px; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+        h1 { margin: 0; font: 700 clamp(2.4rem, 7vw, 5rem)/.9 Georgia, serif; letter-spacing: -.06em; }
+        header p:last-child { max-width: 230px; margin: 0; color: var(--muted); text-align: right; }
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 30px 0 18px; }
+        .stat { min-height: 190px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; background: var(--lime); }
+        .stat:nth-child(2) { background: #d5e6df; }.stat:nth-child(3) { background: #f7d7b9; }.stat:nth-child(4) { background: #e8d8ee; }
+        .number { font: 700 clamp(2.5rem, 5vw, 4.5rem)/.9 Georgia, serif; letter-spacing: -.06em; }
+        .label { max-width: 130px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .context { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 34px; padding-top: 22px; border-top: 1px solid #d9dfd8; }
+        .context h2 { margin: 0 0 8px; font: 700 1.35rem Georgia, serif; }
+        .context p { margin: 0; color: var(--muted); }
+        .bar { height: 12px; display: flex; margin-top: 18px; background: #edf1eb; }.bar span:first-child { width: 75%; background: var(--green); }.bar span:last-child { width: 25%; background: var(--orange); }
+        footer { margin-top: 42px; color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+        @media (max-width: 720px) { body { padding: 8px; } header { display: block; } header p:last-child { margin-top: 16px; text-align: left; }.stats { grid-template-columns: 1fr 1fr; }.stat { min-height: 150px; }.context { grid-template-columns: 1fr; } }
+        @media (max-width: 430px) { .stats { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <header><div><p class="eyebrow">Project field statistics</p><h1>By the numbers</h1></div><p>Activity snapshot for the Delhi project cycle, prepared September 2026.</p></header>
+        <section class="stats" aria-label="Project statistics"><article class="stat"><span class="number">6</span><span class="label">Team members</span></article><article class="stat"><span class="number">180+</span><span class="label">Metro tickets purchased</span></article><article class="stat"><span class="number">60+</span><span class="label">Bus tickets purchased</span></article><article class="stat"><span class="number">200+</span><span class="label">Kilometers self-driven by bike</span></article></section>
+        <section class="context"><div><h2>Public transport mix</h2><p>More than 240 combined metro and bus tickets supported movement between project locations. Metro journeys made up the larger share of recorded public transport activity.</p><div class="bar" aria-label="Approximate transport split"><span></span><span></span></div></div><div><h2>On the road</h2><p>The team also covered more than 200 kilometers across Delhi by self-driving on bikes, keeping local travel flexible for visits, coordination, and field work.</p></div></section>
+        <footer>Project statistics · Internal field record</footer>
+    </main>
+    <script src="security.js"></script>
+</body>
+</html>

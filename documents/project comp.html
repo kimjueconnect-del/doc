@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Project Completion Certificate</title>
+    <style>
+        :root {
+            --logo-red: #8f0000;
+            --logo-red-light: #fbf1f1;
+            --logo-red-muted: #ead4d4;
+        }
+
+        @page { size: A4 portrait; margin: 8mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f3e8e8;
+            padding: 10px;
+            font-family: 'Georgia', serif;
+        }
+        .certificate {
+            width: 100%;
+            max-width: 760px;
+            min-height: calc(297mm - 24mm);
+            margin: 0 auto;
+            background: white;
+            border: 8px solid var(--logo-red);
+            padding: 18px 28px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .certificate::before {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border: 1px solid var(--logo-red-muted);
+            pointer-events: none;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+        .university-seal {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .university-seal img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .title {
+            font-size: 26pt;
+            color: var(--logo-red);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 8px 0;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 10pt;
+            color: #666;
+            font-style: italic;
+        }
+        .recipient {
+            text-align: center;
+            margin: 14px 0;
+        }
+        .recipient-name {
+            font-size: 20pt;
+            color: var(--logo-red);
+            border-bottom: 3px double var(--logo-red);
+            display: inline-block;
+            padding: 4px 24px;
+            margin: 8px 0;
+        }
+        .project-details {
+            background: var(--logo-red-light);
+            padding: 14px 18px;
+            margin: 14px 0;
+            border-left: 3px solid var(--logo-red);
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .detail-item {
+            text-align: center;
+        }
+        .detail-value {
+            font-size: 15pt;
+            font-weight: bold;
+            color: var(--logo-red);
+        }
+        .detail-label {
+            font-size: 8pt;
+            color: #666;
+            text-transform: uppercase;
+        }
+        .features-list {
+            margin: 14px 0;
+            padding: 12px;
+            background: #f8eeee;
+            border-radius: 10px;
+        }
+        .feature-title {
+            font-weight: bold;
+            color: var(--logo-red);
+            margin-bottom: 7px;
+            text-align: center;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            font-size: 8.5pt;
+        }
+        .feature-item {
+            padding: 4px 6px;
+            background: white;
+            border-left: 3px solid var(--logo-red-muted);
+            padding-left: 8px;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-around;
+            margin-top: auto;
+            padding-top: 24px;
+        }
+        .sign-block {
+            text-align: center;
+            width: 180px;
+        }
+        .sign-img {
+            width: 110px;
+            height: 32px;
+            margin: 0 auto;
+            border-bottom: 1px solid #333;
+        }
+        .footer {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 9pt;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate">
+        <div class="header">
+            <div class="university-seal">
+                <img src="../UChicago.png" alt="University of Chicago logo">
+            </div>
+            <div class="title">Certificate of Completion</div>
+            <div class="subtitle">Computer Science Department - Software Development Project</div>
+        </div>
+        
+        <div class="recipient">
+            <p style="font-size: 10pt;">This is to certify that</p>
+            <div class="recipient-name">Vercel Digital Project 210326</div>
+            <p style="font-size: 9pt; margin-top: 6px;">
+                represented by <strong>Priyanshu Singh</strong>
+            </p>
+            <p style="font-size: 10pt; margin-top: 10px;">
+                has successfully completed the software development project
+            </p>
+            <div style="font-size: 13pt; color: var(--logo-red); margin: 8px 0; font-weight: bold;">
+                "Vercel Digital Project 210326"
+            </div>
+        </div>
+        
+        <div class="project-details">
+            <div style="text-align: center; margin-bottom: 8px;">
+                <strong>Project ID:</strong> UCWDP210326 | 
+                <strong>Completion Date:</strong> September 13, 2024
+            </div>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-value">4</div>
+                    <div class="detail-label">Frontend Applications</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-value">785K</div>
+                    <div class="detail-label">Lines of Code</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-value">$5,400</div>
+                    <div class="detail-label">Project Value</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features-list">
+            <div class="feature-title">DELIVERED SYSTEMS & MODULES</div>
+            <div class="features">
+                <div class="feature-item">✓ Complex Backend Architecture (Microservices)</div>
+                <div class="feature-item">✓ Vendor Management Portal</div>
+                <div class="feature-item">✓ Driver Mobile Application</div>
+                <div class="feature-item">✓ Customer Ordering Platform</div>
+                <div class="feature-item">✓ Dynamic Pricing Calculation Engine</div>
+                <div class="feature-item">✓ AI-Powered Routing Algorithm</div>
+                <div class="feature-item">✓ Custom Delhi Geospatial Mapping</div>
+                <div class="feature-item">✓ Multi-Gateway Payment System</div>
+                <div class="feature-item">✓ Corporate & Admin Access Controls</div>
+                <div class="feature-item">✓ Real-time Database & Caching Layer</div>
+            </div>
+        </div>
+        
+        <div class="signatures">
+            <div class="sign-block">
+                <div class="sign-img"></div>
+                <p style="margin-top: 10px; font-weight: bold;">Diana Franklin</p>
+                <p style="font-size: 9pt;">Project Supervisor</p>
+                <p style="font-size: 9pt; color: #666;">Computer Science Department</p>
+            </div>
+            <div class="sign-block">
+                <div class="sign-img"></div>
+                <p style="margin-top: 10px; font-weight: bold;">Prof.Hank Hoffmann</p>
+                <p style="font-size: 9pt;">Department Chair</p>
+                <p style="font-size: 9pt; color: #666;">University of Chicago</p>
+            </div>
+            <div class="sign-block">
+                <div class="sign-img"></div>
+                <p style="margin-top: 10px; font-weight: bold;">Priyanshu Singh</p>
+                <p style="font-size: 9pt;">Project Recipient</p>
+                <p style="font-size: 9pt; color: #666;">Digital vercel project[210326]</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>University of Chicago</strong> | Computer Science Department | 5730 S Ellis Avenue, Chicago, IL 60637</p>
+            <p>This certificate verifies the successful completion of all deliverables as per Agreement dated 26th June 2026</p>
+            <p>Certificate ID: UC-CS-CERT-2024-UCWDP210326 | Verified at: Department of Computer Science</p>
+        </div>
+    </div>
+</body>
+<script src="../security.js"></script>
+</html>

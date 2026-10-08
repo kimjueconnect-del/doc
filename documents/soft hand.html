@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Source Code Handover</title>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a1a2e;
+            padding: 20px;
+        }
+        .terminal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #0f0f23;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0,255,0,0.2);
+        }
+        .terminal-header {
+            background: #2d2d2d;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        .terminal-title {
+            color: #999;
+            margin-left: 10px;
+            font-size: 10pt;
+        }
+        .terminal-body {
+            padding: 30px;
+            color: #00ff00;
+        }
+        .ascii-art {
+            color: #00ff00;
+            font-size: 8pt;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .section {
+            margin: 25px 0;
+            border: 1px solid #333;
+            padding: 20px;
+            background: rgba(0,255,0,0.02);
+        }
+        .section-title {
+            color: #00ff00;
+            border-bottom: 1px solid #00ff00;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .code-block {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px 0;
+            color: #c9d1d9;
+            font-size: 9pt;
+            overflow-x: auto;
+        }
+        .code-comment { color: #8b949e; }
+        .code-string { color: #a5d6ff; }
+        .code-key { color: #7ee787; }
+        .file-tree {
+            color: #c9d1d9;
+            line-height: 1.8;
+        }
+        .folder { color: #58a6ff; }
+        .file { color: #c9d1d9; }
+        .check-item {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .check-item::before {
+            content: "[✓]";
+            position: absolute;
+            left: 0;
+            color: #00ff00;
+        }
+        .credential-box {
+            background: #ff4444;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .signature-area {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            color: #00ff00;
+        }
+        .sign-box {
+            width: 45%;
+        }
+        .sign-line {
+            border-top: 1px solid #00ff00;
+            margin-top: 50px;
+            padding-top: 10px;
+        }
+        .blink {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        .hash-display {
+            font-size: 8pt;
+            color: #8b949e;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <div class="terminal-title">source_code_handover.sh — bash — 80x24</div>
+        </div>
+        
+        <div class="terminal-body">
+            <div class="ascii-art">
+╔══════════════════════════════════════════════════════════════════╗
+║     SOURCE CODE HANDOVER CERTIFICATE                              ║
+║     Project: UCWDP210326 - Delivery Management Platform          ║
+║     University of Chicago CS Department                            ║
+╚══════════════════════════════════════════════════════════════════╝
+            </div>
+            
+            <div class="section">
+                <div class="section-title">> TRANSFER_DETAILS</div>
+                <div class="code-block">
+<span class="code-comment">// Handover Metadata</span>
+{
+  <span class="code-key">"project_id"</span>: <span class="code-string">"UCWDP210326"</span>,
+  <span class="code-key">"project_name"</span>: <span class="code-string">"Delhi Delivery Management System"</span>,
+  <span class="code-key">"transfer_date"</span>: <span class="code-string">"2024-09-13T00:00:00Z"</span>,
+  <span class="code-key">"from"</span>: <span class="code-string">"University of Chicago - CS Dept"</span>,
+    <span class="code-key">"to"</span>: <span class="code-string">"Vercel Digital Project 210326"</span>,
+  <span class="code-key">"recipient"</span>: <span class="code-string">"Priyanshu Singh"</span>,
+  <span class="code-key">"total_files"</span>: <span class="code-string">"2,847"</span>,
+  <span class="code-key">"total_lines_of_code"</span>: <span class="code-string">"~185,000"</span>,
+  <span class="code-key">"repository_size"</span>: <span class="code-string">"847 MB"</span>
+}
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">> REPOSITORY_STRUCTURE</div>
+                <div class="file-tree">
+<span class="folder">📁 UCWDP210326-DeliveryPlatform/</span>
+├── <span class="folder">📁 backend/</span>
+│   ├── <span class="folder">📁 api-gateway/</span>
+│   ├── <span class="folder">📁 auth-service/</span>
+│   ├── <span class="folder">📁 calculation-engine/</span>
+│   ├── <span class="folder">📁 routing-service/</span>
+│   ├── <span class="folder">📁 payment-service/</span>
+│   ├── <span class="folder">📁 notification-service/</span>
+│   └── <span class="file">🐳 docker-compose.yml</span>
+├── <span class="folder">📁 frontend/</span>
+│   ├── <span class="folder">📁 vendor-portal/</span>          <span class="code-comment"># React.js application</span>
+│   ├── <span class="folder">📁 driver-app/</span>             <span class="code-comment"># React Native / PWA</span>
+│   └── <span class="folder">📁 user-app/</span>               <span class="code-comment"># Next.js application</span>
+├── <span class="folder">📁 database/</span>
+│   ├── <span class="folder">📁 migrations/</span>
+│   ├── <span class="folder">📁 seeders/</span>
+│   └── <span class="file">📄 schema.sql</span>
+├── <span class="folder">📁 algorithms/</span>
+│   ├── <span class="file">📄 routing_optimizer.py</span>   <span class="code-comment"># ML-based routing</span>
+│   ├── <span class="file">📄 price_calculator.py</span>     <span class="code-comment"># Dynamic pricing</span>
+│   └── <span class="file">📄 geo_indexer.py</span>           <span class="code-comment"># Spatial indexing</span>
+├── <span class="folder">📁 infrastructure/</span>
+│   ├── <span class="file">📄 terraform/</span>
+│   ├── <span class="file">📄 kubernetes/</span>
+│   └── <span class="file">📄 ci-cd/</span>
+├── <span class="folder">📁 documentation/</span>
+│   ├── <span class="file">📄 API_Reference.pdf</span>
+│   ├── <span class="file">📄 Deployment_Guide.pdf</span>
+│   └── <span class="file">📄 User_Manuals/</span>
+└── <span class="file">📄 README.md</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">> DELIVERED_COMPONENTS</div>
+                <div class="check-item">Backend microservices architecture (Node.js + Python)</div>
+                <div class="check-item">Vendor Portal - Complete React.js application</div>
+                <div class="check-item">Driver App - React Native / PWA with GPS integration</div>
+                <div class="check-item">User Application - Next.js with Stripe integration</div>
+                <div class="check-item">Calculation Engine - Python-based pricing system</div>
+                <div class="check-item">Routing Algorithm - ML-optimized delivery routes</div>
+                <div class="check-item">Custom Delhi map with vendor geospatial indexing</div>
+                <div class="check-item">Payment gateway integration (Stripe + Razorpay + UPI)</div>
+                <div class="check-item">Database schemas and migration scripts</div>
+                <div class="check-item">Docker containers and orchestration files</div>
+                <div class="check-item">CI/CD pipeline configuration</div>
+                <div class="check-item">Complete API documentation (OpenAPI/Swagger)</div>
+                <div class="check-item">Technical architecture diagrams</div>
+                <div class="check-item">Deployment and setup guides</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">> ACCESS_CREDENTIALS</div>
+                <div class="credential-box">
+                    ⚠️  CONFIDENTIAL: Store securely in password manager
+                </div>
+                <div class="code-block">
+<span class="code-comment"># Repository Access</span>
+GitHub/GitLab URL: <span class="code-string">https://github.com/uc-cs/UCWDP210326</span>
+Access Token: <span class="code-string">[Provided separately via secure channel]</span>
+
+<span class="code-comment"># Server Credentials</span>
+Server IP: <span class="code-string">[IP_ADDRESS]</span>
+SSH Key: <span class="code-string">[Private key file: ucwdp210326_key.pem]</span>
+Root Access: <span class="code-string">[Credentials in sealed envelope]</span>
+
+<span class="code-comment"># Database</span>
+Admin Panel: <span class="code-string">https://[server]/admin</span>
+Master Credentials: <span class="code-string">[Provided separately]</span>
+
+<span class="code-comment"># Third-Party APIs</span>
+Stripe: <span class="code-string">sk_live_xxxxxxxxxxxxx</span>
+Mapbox: <span class="code-string">pk.xxxxxxxxxxxxxxxxx</span>
+SMS Gateway: <span class="code-string">[API Key]</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">> VERIFICATION_HASHES</div>
+                <p>SHA-256 checksums for integrity verification:</p>
+                <div class="hash-display">
+Backend tarball:    a3f7c9d2e8b1... (847MB)  [COMPLETE]
+Frontend tarball:   b8e2d5f1a9c4... (423MB)  [COMPLETE]
+Database dump:      c7a1e3f8b2d5... (156MB)  [COMPLETE]
+Documentation:      d4f9a2e7c1b8... (89MB)   [COMPLETE]
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">> ACKNOWLEDGMENT</div>
+                <p>I, the undersigned, confirm that:</p>
+                <p style="margin: 15px 0; line-height: 1.8;">
+                1. All source code, documentation, and related materials listed above have been received<br>
+                2. Repository access has been verified and is functional<br>
+                3. All credentials provided have been tested and are working<br>
+                4. I understand the confidentiality obligations regarding the source code<br>
+                5. Full payment of $5,400 has been made for this deliverable
+                </p>
+            </div>
+            
+            <div class="signature-area">
+                <div class="sign-box">
+                    <div class="sign-line">
+                        Transferring Authority<br>
+                        [University Representative]<br>
+                        Date: ___________
+                    </div>
+                </div>
+                <div class="sign-box">
+                    <div class="sign-line">
+                        Receiving Party<br>
+                        <img src="../asign.jpg" alt="Priyanshu Singh signature" style="display: block; width: 150px; height: 58px; object-fit: contain; margin: 0 auto 4px;">
+                        Priyanshu Singh<br>
+                        Date: ___________
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; text-align: center; color: #666; font-size: 9pt;">
+                <span class="blink">_</span> End of transmission - Project UCWDP210326 successfully transferred
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../security.js"></script>
+</html>

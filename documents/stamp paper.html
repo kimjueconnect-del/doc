@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Non-Judicial Stamp Paper</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        body { 
+            font-family: 'Times New Roman', Times, serif; 
+            margin: 0; 
+            padding: 0; 
+            background: #f5f5f5;
+        }
+        .stamp-paper {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: #fff;
+            position: relative;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        /* Watermark effect */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 72pt;
+            color: rgba(200, 200, 200, 0.15);
+            font-weight: bold;
+            pointer-events: none;
+            z-index: 1;
+        }
+        /* Header Stamp Duty Section */
+        .duty-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .duty-value {
+            font-size: 28pt;
+            font-weight: bold;
+            border: 3px solid white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .duty-text {
+            font-size: 14pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .govt-seal {
+            width: 80px;
+            height: 80px;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 8pt;
+        }
+        .govt-seal img { width: 68px; height: 68px; object-fit: contain; opacity: .75; }
+        /* Document Body */
+        .document-body {
+            padding: 25px 30px;
+            position: relative;
+            z-index: 2;
+        }
+        /* Serial Number Section */
+        .serial-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        .serial-box {
+            font-family: 'Courier New', monospace;
+            font-size: 11pt;
+        }
+        .serial-label {
+            font-size: 9pt;
+            color: #666;
+            text-transform: uppercase;
+        }
+        /* Security Features */
+        .security-bar {
+            height: 8px;
+            background: repeating-linear-gradient(
+                45deg,
+                #1e3c72,
+                #1e3c72 10px,
+                #fff 10px,
+                #fff 20px
+            );
+            margin: 15px 0;
+        }
+        /* Main Content */
+        .content-area {
+            border: 2px solid #1e3c72;
+            min-height: 600px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .affidavit-title {
+            text-align: center;
+            font-size: 18pt;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 25px;
+            color: #1e3c72;
+        }
+        .deponent-block {
+            margin: 20px 0;
+            line-height: 2;
+        }
+        .paragraph {
+            text-align: justify;
+            margin: 15px 0;
+            text-indent: 0;
+        }
+        .highlight-amount {
+            background: #fff3cd;
+            padding: 2px 8px;
+            font-weight: bold;
+            border: 1px solid #ffc107;
+        }
+        /* Payment Details Box */
+        .payment-box {
+            border: 1px solid #333;
+            padding: 15px;
+            margin: 20px 0;
+            background: #fafafa;
+        }
+        .payment-title {
+            font-weight: bold;
+            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+        /* Signature Section */
+        .signature-area {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .sign-column {
+            width: 45%;
+        }
+        .sign-line {
+            border-top: 1px solid #000;
+            margin-top: 60px;
+            padding-top: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        /* Notary Section */
+        .notary-box {
+            margin-top: 30px;
+            border: 2px solid #1e3c72;
+            padding: 20px;
+            background: #f0f4f8;
+        }
+        .notary-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 15px;
+            text-decoration: underline;
+        }
+        /* Footer */
+        .stamp-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1e3c72;
+            color: white;
+            padding: 10px 20px;
+            font-size: 9pt;
+            display: flex;
+            justify-content: space-between;
+        }
+        /* Hologram placeholder */
+        .hologram {
+            position: absolute;
+            top: 120px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            transform: rotate(-5deg);
+        }
+        /* Microprint border */
+        .microprint {
+            font-size: 6pt;
+            color: #999;
+            text-align: center;
+            margin: 10px 0;
+            word-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stamp-paper">
+        <div class="watermark">NON-JUDICIAL</div>
+        
+        <!-- Hologram Security Feature -->
+        <div class="hologram">
+            SECURE<br>VALID<br>INDIA
+        </div>
+        
+        <!-- Header -->
+        <div class="duty-header">
+            <div>
+                <div class="duty-text">Non-Judicial Stamp Paper</div>
+                <div style="font-size: 10pt; margin-top: 5px;">SAMPLE DOCUMENT - NOT GOVERNMENT ISSUED</div>
+                <div style="font-size: 9pt;">The Indian Stamp Act, 1899</div>
+            </div>
+            <div class="duty-value">₹100/-</div>
+            <div class="govt-seal">
+                <img src="../UChicago.png" alt="University of Chicago COLLEGE SEAL">
+            </div>
+        </div>
+        
+        <!-- Serial Numbers -->
+        <div class="serial-section">
+            <div class="serial-box">
+                <div class="serial-label">Serial Number</div>
+                <div>SAMPLE-DEL-2026-000001</div>
+            </div>
+            <div class="serial-box">
+                <div class="serial-label">Treasury Code</div>
+                <div>SAMPLE-TREASURY-001</div>
+            </div>
+            <div class="serial-box">
+                <div class="serial-label">Date of Issue</div>
+                <div>26/08/2026</div>
+            </div>
+            <div class="serial-box">
+                <div class="serial-label">Vendor Code</div>
+                <div>SAMPLE-VENDOR-001</div>
+            </div>
+        </div>
+        
+        <!-- Security Bar -->
+        <div class="security-bar"></div>
+        
+        <!-- Microprint -->
+        <div class="microprint">
+            THIS IS A NON-JUDICIAL STAMP PAPER ISSUED UNDER THE AUTHORITY OF THE STATE GOVERNMENT 
+            ANY FORGERY OR MISUSE IS PUNISHABLE UNDER SECTION 255-263 OF THE BHARATIYA NYAYA SANHITA 2023
+        </div>
+        
+        <!-- Main Document Content -->
+        <div class="document-body">
+            <div class="content-area">
+                <div class="affidavit-title">AFFIDAVIT</div>
+                
+                <div class="deponent-block">
+                    I, <strong>[RAVI KUMAR]</strong>, S/o <strong>[Father's Name]</strong>, aged <strong>[Age]</strong> years, 
+                    by occupation <strong>[Occupation]</strong>, residing at <strong>[Complete Address with PIN Code]</strong>, 
+                    do hereby solemnly affirm and declare as follows:
+                </div>
+                
+                <div style="background: #e8f4f8; padding: 15px; margin: 20px 0; border-left: 4px solid #1e3c72;">
+                    <strong>SOLEMN DECLARATION:</strong> I, the deponent above-named, do hereby solemnly affirm and declare that the contents 
+                    of this affidavit are true and correct to the best of my knowledge, information, and belief, and nothing material 
+                    has been concealed therefrom.
+                </div>
+                
+                <div class="paragraph">
+                    <strong>1.</strong> That I am the deponent above-named and I am well conversant with the facts and circumstances 
+                    of the matter deposed herein below.
+                </div>
+                
+                <div class="paragraph">
+                    <strong>2.</strong> That I hereby confirm and acknowledge that I have received from <strong>Shri Priyanshu Singh</strong>, 
+                    resident of <strong>[Address]</strong>, a total sum of 
+                    <span class="highlight-amount">₹53,000/- (Rupees Fifty-Three Thousand Only)</span> 
+                    on behalf of business entity bearing reference ID: <strong>UCWDP210326</strong>.
+                </div>
+                
+                <div class="paragraph">
+                    <strong>3.</strong> That the said payment was made for professional services rendered by me, comprising:
+                    Survey Services, Travel Expenses, Indexing Services, Onboarding Services, and Testing Services.
+                </div>
+                
+                <!-- Payment Details Box -->
+                <div class="payment-box">
+                    <div class="payment-title">PAYMENT PARTICULARS</div>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="width: 40%;"><strong>Total Amount Received:</strong></td>
+                            <td>₹53,000/- (Rupees Fifty-Three Thousand Only)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mode of Payment:</strong></td>
+                            <td>[Bank Transfer / UPI / Cash / Cheque]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Transaction Reference:</strong></td>
+                            <td>[UTR Number / Transaction ID / Cheque Number]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Date of Payment:</strong></td>
+                            <td>[DD/MM/YYYY]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bank Account Credited:</strong></td>
+                            <td>[Bank Name, Account Number ending in XXXX]</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="paragraph">
+                    <strong>4.</strong> That I hereby confirm that the said amount has been duly received by me and credited to my account, 
+                    and I have no further claim whatsoever against Shri Priyanshu Singh or the said business entity in respect of the 
+                    aforesaid services.
+                </div>
+                
+                <div class="paragraph">
+                    <strong>5.</strong> That I am executing this affidavit voluntarily and without any coercion, undue influence, 
+                    or pressure from any person whatsoever.
+                </div>
+                
+                <div class="paragraph">
+                    <strong>6.</strong> That I am aware that this affidavit is being executed under the provisions of the 
+                    Oaths Act, 1969 and is legally binding upon me.
+                </div>
+                
+                <!-- Place and Date -->
+                <div style="margin: 30px 0;">
+                    <p><strong>Place:</strong> _________________________</p>
+                    <p><strong>Date:</strong> _________________________</p>
+                </div>
+                
+                <!-- Verification -->
+                <div style="border: 1px solid #333; padding: 15px; margin: 30px 0; background: #f5f5f5;">
+                    <div style="text-align: center; font-weight: bold; margin-bottom: 15px;">VERIFICATION</div>
+                    <p>Verified at <strong>[Place]</strong> on this <strong>[Date]</strong> that the contents of the above affidavit 
+                    are true and correct to the best of my knowledge, information, and belief.</p>
+                </div>
+                
+                <!-- Signature Section -->
+                <div class="signature-area">
+                    <div class="sign-column">
+                        <div class="sign-line">
+                            <img src="../dsign.jpg" alt="Ravi Kumar signature" style="display: block; width: 150px; height: 58px; object-fit: contain; margin: 0 auto 4px;">
+                            Signature of Deponent<br>
+                            <strong>[RAVI KUMAR]</strong>
+                        </div>
+                        <div style="margin-top: 15px; font-size: 10pt;">
+                            Name: Ravi Kumar<br>
+                            Address: [As above]<br>
+                            Mobile: [Contact Number]
+                        </div>
+                    </div>
+                    <div class="sign-column" style="text-align: center;">
+                        <div style="border: 1px solid #333; width: 120px; height: 150px; margin: 0 auto 10px; 
+                                    display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+                            <span style="font-size: 9pt; color: #666;">Affix<br>Passport Size<br>Photograph<br>Here</span>
+                        </div>
+                        <div style="font-size: 9pt;">(Attested by Notary)</div>
+                    </div>
+                </div>
+                
+                <!-- Notary Section -->
+                <div class="notary-box">
+                    <div class="notary-title">IDENTIFICATION & ATTESTATION</div>
+                    <p>Identified by me:</p>
+                    <p style="margin-top: 10px;">The deponent <strong>[Ravi Kumar]</strong> is personally known to me / identified by 
+                    <strong>[Identifier Name]</strong>, who is personally known to me.</p>
+                    
+                    <div style="margin-top: 30px; display: flex; justify-content: space-between;">
+                        <div>
+                            <p><strong>Notary Public / Oath Commissioner</strong></p>
+                            <p>Name: _________________________</p>
+                            <p>Registration No.: _________________________</p>
+                            <p>Date: _________________________</p>
+                            <p>Place: _________________________</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="border: 2px solid #1e3c72; width: 100px; height: 100px; border-radius: 50%; 
+                                        display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                <span style="font-size: 8pt;">NOTARY<br>SEAL</span>
+                            </div>
+                            <p style="font-size: 9pt; margin-top: 10px;">[Seal & Signature]</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Footer Warning -->
+                <div style="margin-top: 20px; font-size: 8pt; color: #666; border-top: 1px solid #ccc; padding-top: 10px;">
+                    <strong>WARNING:</strong> Any person who makes a false statement in this affidavit is liable to prosecution 
+                    under Section 193 of the Bharatiya Nyaya Sanhita, 2023 (formerly Section 193 IPC) and/or Section 199 of the 
+                    Code of Criminal Procedure, 1973. Punishment may extend to imprisonment and/or fine.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="stamp-footer">
+            <div>
+                <strong>NON-JUDICIAL STAMP PAPER</strong> | Government of [State] | The Indian Stamp Act, 1899
+            </div>
+            <div>
+                Secure Document | Verify at [State Treasury Website]
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../security.js"></script>
+</html>

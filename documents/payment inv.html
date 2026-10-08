@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Receipt</title>
+    <style>
+        @page { size: A5 landscape; margin: 10mm; }
+        body { font-family: 'Courier New', monospace; font-size: 10pt; margin: 0; padding: 0; }
+        .receipt-box { max-width: 700px; margin-left: 0; margin-right: auto; border: 2px solid #000; padding: 20px; }
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 20px; }
+        .receipt-title { font-size: 18pt; font-weight: bold; letter-spacing: 5px; }
+        .receipt-no { float: right; border: 1px solid #000; padding: 5px 15px; margin-top: -10px; }
+        .details-table { width: 100%; margin: 20px 0; }
+        .details-table td { padding: 8px; vertical-align: top; }
+        .details-table .label { font-weight: bold; width: 30%; }
+        .amount-box { border: 2px solid #000; padding: 15px; text-align: center; margin: 20px 0; background: #f9f9f9; }
+        .amount-words { font-style: italic; margin-top: 10px; }
+        .signatures { margin-top: 40px; display: flex; justify-content: space-between; }
+        .sign-box { width: 30%; text-align: center; }
+        .stamp-area { border: 1px dashed #999; width: 80px; height: 80px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 8pt; color: #666; }
+        .stamp-area img { width: 64px; height: 64px; object-fit: contain; opacity: .7; }
+    </style>
+</head>
+<body>
+    <div class="receipt-box">
+        <div class="header">
+            <div class="receipt-no">Receipt No: SAMPLE-R-2026-2487</div>
+            <div class="receipt-title">Payment RECEIPT</div>
+            <p style="margin: 5px 0; margin-right: 404px;">Priyanshu Singh</p>
+        </div>
+
+        <table class="details-table">
+            <tr>
+                <td class="label">Date of Receipt:</td>
+                <td>26/08/2026</td>
+                <td class="label">Time:</td>
+                <td>03:30 PM</td>
+            </tr>
+            <tr>
+                <td class="label">Received From:</td>
+                <td colspan="3">Priyanshu Singh</td>
+            </tr>
+            <tr>
+                <td class="label">On Behalf Of:</td>
+                <td colspan="3">Business ID: UCWDP210326</td>
+            </tr>
+            <tr>
+                <td class="label">Received By:</td>
+                <td colspan="3">Ravi Kumar</td>
+            </tr>
+            <tr>
+                <td class="label">Purpose:</td>
+                <td colspan="3">Survey, travel, indexing, onboarding, and testing services</td>
+            </tr>
+            <tr>
+                <td class="label">Invoice Reference:</td>
+                <td>#1</td>
+                <td class="label">Project ID:</td>
+                <td>UCWDP210326</td>
+            </tr>
+        </table>
+
+        <div class="amount-box">
+            <div style="font-size: 24pt; font-weight: bold;">₹ 53000</div>
+            <div class="amount-words">(Rupees Fifty-Three Thousand Only)</div>
+        </div>
+
+        <table class="details-table">
+            <tr>
+                <td class="label">Mode of Payment:</td>
+                <td>
+                    <input type="checkbox"> Cash 
+                    <input type="checkbox"> Cheque No: _________
+                    <input type="checkbox"> Bank Transfer
+                    <input type="checkbox"> UPI
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Bank/Transaction Details:</td>
+                <td>
+                    Bank Name: State Bank of India<br>
+                    Transaction ID: 919759113359<br>
+                    Transaction Date: 26/08/2026 (sample)
+                </td>
+            </tr>
+            <tr>
+                <td class="label">For the Period:</td>
+                <td>15/04/2026 to 26/08/2026</td>
+            </tr>
+        </table>
+
+        <div style="margin: 20px 0; padding: 10px; border: 1px solid #ccc; background: #f5f5f5; font-size: 9pt;">
+            <strong>Payment Breakdown:</strong><br>
+            Survey: ₹10000 | Self-travel: ₹8000 | Metro/Bus/Auto: ₹5000 | Indexing: ₹10000 | Onboarding: ₹6000 | Testing: ₹8000 | Other: ₹6000
+        </div>
+
+        <div class="signatures">
+            <div class="sign-box">
+                <div class="stamp-area"><img src="../UChicago.png" alt="University of Chicago COLLEGE SEAL"></div>
+                <div style="border-top: 1px solid #000; padding-top: 5px;">
+                    Prepared By<br>
+                    Satish Mishra<br>
+                    Branch Manager, SBI, Azadpur<br>
+                    Branch Code: 01707<br>
+                    Date: 26/08/2026
+                </div>
+            </div>
+            <div class="sign-box">
+                <div style="border-top: 1px solid #000; padding-top: 5px;">
+                    Received By<br>
+                    <img src="../dsign.jpg" alt="Ravi Kumar signature" style="display: block; width: 120px; height: 48px; object-fit: contain; margin: 4px auto;">
+                    [Ravi Kumar]<br>
+                    Date: 26/08/2026
+                </div>
+            </div>
+            <div class="sign-box">
+                <div style="border-top: 1px solid #000; padding-top: 5px;">
+                    Authorized By<br>
+                    <img src="../asign.jpg" alt="Priyanshu Singh signature" style="display: block; width: 120px; height: 48px; object-fit: contain; margin: 4px auto;">
+                    [Priyanshu Singh]<br>
+                    Date: 26/08/2026
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; font-size: 8pt; text-align: center; border-top: 1px solid #ccc; padding-top: 10px;">
+            This is a computer-generated receipt. For queries, contact sbi.01707@sbi.co.in/011-2767-2717 
+            Retain for your records. Subject to realization of cheque/transfer.
+        </div>
+    </div>
+</body>
+<script src="../security.js"></script>
+</html>

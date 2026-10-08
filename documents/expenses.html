@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Reimbursement</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: Arial, sans-serif; font-size: 10pt; margin: 0; padding: 20px; }
+        .form-container { max-width: 800px; margin: auto; border: 1px solid #000; padding: 20px; }
+        .header { text-align: center; border-bottom: 3px double #000; padding-bottom: 15px; margin-bottom: 20px; }
+        .form-section { margin: 15px 0; border: 1px solid #ccc; padding: 15px; }
+        .section-title { background: #e0e0e0; padding: 8px; margin: -15px -15px 15px -15px; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; }
+        .info-table td { padding: 8px; border: 1px solid #ccc; }
+        .info-table .label { background: #f5f5f5; font-weight: bold; width: 25%; }
+        .expense-table th { background: #d0d0d0; padding: 10px; border: 1px solid #000; text-align: left; }
+        .expense-table td { padding: 8px; border: 1px solid #000; }
+        .expense-table tr:nth-child(even) { background: #f9f9f9; }
+        .total-row { background: #e0e0e0 !important; font-weight: bold; }
+        .declaration { margin: 20px 0; padding: 15px; border: 1px solid #000; background: #fffef0; }
+        .signature-grid { display: flex; justify-content: space-between; margin-top: 30px; }
+        .sign-block { width: 30%; text-align: center; }
+        .attachment-list { margin: 10px 0; padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="header">
+            <h2 style="margin: 0;">EXPENSE REIMBURSEMENT CLAIM</h2>
+            <p style="margin: 5px 0; font-size: 9pt;">Business ID: UCWDP210326</p>
+        </div>
+
+        <div class="form-section">
+            <div class="section-title">EMPLOYEE/CLAIMANT INFORMATION</div>
+            <table class="info-table">
+                <tr>
+                    <td class="label">Full Name:</td>
+                    <td>Ravi Kumar</td>
+                    <td class="label">Employee/Contractor ID:</td>
+                    <td>NIL</td>
+                </tr>
+                <tr>
+                    <td class="label">Department:</td>
+                    <td>NIL</td>
+                    <td class="label">Designation:</td>
+                    <td>NIL</td>
+                </tr>
+                <tr>
+                    <td class="label">Contact Number:</td>
+                    <td>+91 98 6626 8238</td>
+                    <td class="label">Email:</td>
+                    <td>ravi.hyper.dc@gmail.com</td>
+                </tr>
+                <tr>
+                    <td class="label">Reporting Manager:</td>
+                    <td colspan="3">Priyanshu Singh</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <div class="section-title">CLAIM DETAILS</div>
+            <table class="info-table">
+                <tr>
+                    <td class="label">Claim Reference:</td>
+                    <td>EXP-2026-0026</td>
+                    <td class="label">Claim Date:</td>
+                    <td>26/08/2026</td>
+                </tr>
+                <tr>
+                    <td class="label">Project/Client:</td>
+                    <td colspan="3">Vercel Digital project 210326 | ID: UCWDP210326</td>
+                </tr>
+                <tr>
+                    <td class="label">Expense Period:</td>
+                    <td>15/04/2026</td>
+                    <td class="label">To:</td>
+                    <td>26/08/2026</td>
+                </tr>
+                <tr>
+                    <td class="label">Purpose:</td>
+                    <td colspan="3">Project-related survey, travel and logistics, indexing and documentation, onboarding, testing, and miscellaneous conveyance expenses for Vercel Digital Project 210326.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <div class="section-title">EXPENSE BREAKDOWN</div>
+            <table class="expense-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Receipt No.</th>
+                        <th>Amount (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>15/04/2026</td>
+                        <td>Survey</td>
+                        <td>Field survey and data collection for delivery management platform requirements, site coordination, and project mapping.</td>
+                        <td>#0001</td>
+                        <td>10,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>*15/04/2026</td>
+                        <td>Travel</td>
+                        <td>Self-travel expenses for bike petrol, auto fare, and local project-related movement.</td>
+                        <td>#0002</td>
+                        <td>8,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>*15/04/2026</td>
+                        <td>Travel</td>
+                        <td>Metro, bus, and auto travel expenses for official visits and site-related coordination.</td>
+                        <td>#0003</td>
+                        <td>5,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>26/08/2026</td>
+                        <td>Indexing</td>
+                        <td>Documentation indexing, cataloging, digitization, and record maintenance for project files and related database setup.</td>
+                        <td>#0004</td>
+                        <td>10,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>25/07/2026</td>
+                        <td>Onboarding</td>
+                        <td>Client onboarding, process setup, stakeholder coordination, and project initiation support for system deployment.</td>
+                        <td>#0005</td>
+                        <td>6,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>25/07/2026</td>
+                        <td>Testing</td>
+                        <td>Quality testing, validation, performance checks, and software verification for the delivery management platform.</td>
+                        <td>#0006</td>
+                        <td>8,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>*25/07/2026</td>
+                        <td>Miscellaneous</td>
+                        <td>Meals, local conveyance, and miscellaneous project support incurred during survey, implementation, and validation activities.</td>
+                        <td>#0007</td>
+                        <td>6,000.00</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="4" style="text-align: right;">TOTAL CLAIM AMOUNT:</td>
+                        <td>₹53,000.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><strong>Amount in Words:</strong> Rupees Fifty-Three Thousand Only</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 10px; font-size: 9pt; font-style: italic;">Note: Expenses marked with an asterisk (*) represent amounts incurred up to that date.</p>
+        </div>
+
+        <div class="form-section">
+            <div class="section-title">PAYMENT DETAILS</div>
+            <table class="info-table">
+                <tr>
+                    <td class="label">Payee Name:</td>
+                    <td>Ravi Kumar</td>
+                </tr>
+                <tr>
+                    <td class="label">Bank Name:</td>
+                    <td>State Bank of India</td>
+                </tr>
+                <tr>
+                    <td class="label">Account Number:</td>
+                    <td>50312029789</td>
+                </tr>
+                <tr>
+                    <td class="label">IFSC Code:</td>
+                    <td>SBIN0002140</td>
+                </tr>
+                <tr>
+                    <td class="label">UPI ID :</td>
+                    <td>ravikumar24@paytm</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="declaration">
+            <strong>DECLARATION:</strong><br>
+            I, Ravi Kumar, hereby declare that:
+            <ol>
+                <li>The above expenses were incurred wholly and exclusively for business purposes related to Project ID: UCWDP210326</li>
+                <li>All receipts and supporting documents attached are genuine and original</li>
+                <li>I have not claimed these expenses elsewhere</li>
+                <li>I understand that any false claim will result in disciplinary action</li>
+            </ol>
+            <br>
+            <strong>Date:</strong> 26/08/2026 
+            <strong style="margin-left: 50px;">Claimant Signature:</strong> _______________
+        </div>
+
+        <div class="form-section">
+            <div class="section-title">ATTACHMENTS CHECKLIST</div>
+            <ul class="attachment-list">
+                <li><input type="checkbox"> Original Receipts/Bills (All expenses)</li>
+                <li><input type="checkbox"> Travel Tickets/Booking Confirmations</li>
+                <li><input type="checkbox"> Hotel Invoices</li>
+                <li><input type="checkbox"> Survey Reports/Completion Certificates</li>
+                <li><input type="checkbox"> Bank Account Details (Cancelled Cheque)</li>
+                <li><input type="checkbox"> Approval Email/Document from Manager</li>
+            </ul>
+        </div>
+
+        <div class="signature-grid">
+            <div class="sign-block">
+                <div style="border-top: 1px solid #000; padding-top: 5px;">
+                    <img src="../dsign.jpg" alt="Ravi Kumar signature" style="display: block; width: 120px; height: 48px; object-fit: contain; margin: -52px auto 4px;">
+                    Claimant<br>
+                    Ravi Kumar<br>
+                    Date: 26/08/2026
+                </div>
+            </div>
+            <div class="sign-block">
+                <div style="border-top: 1px solid #000; padding-top: 5px;">
+                    Reviewed By<br>
+                    [Satish Mishra]<br>
+                    Date: _______
+                </div>
+            </div>
+            <div class="sign-block">
+                <div style="border-top: 1px solid #000; padding-top: 5px;">
+                    Approved By<br>
+                    <img src="../asign.jpg" alt="Priyanshu Singh signature" style="display: block; width: 120px; height: 48px; object-fit: contain; margin: 4px auto;">
+                    Priyanshu Singh<br>
+                    Date: 26/08/2026
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px; font-size: 8pt; text-align: center; color: #666;">
+            For Office Use Only: Claim Processed | Payment Reference: _________________ | Date: _________________
+        </div>
+    </div>
+</body>
+<script src="../security.js"></script>
+</html>

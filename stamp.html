@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stamp</title>
+    <style>
+        :root {
+            --ink: #1458a6;
+            --paper: #f4f0e7;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            background: var(--paper);
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .stamp {
+            position: relative;
+            width: min(78vw, 360px);
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+            color: var(--ink);
+            text-align: center;
+            transform: rotate(-3deg);
+            opacity: .9;
+            filter: contrast(1.15);
+            border: 8px solid var(--ink);
+            border-radius: 50%;
+        }
+
+        .stamp::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 2px solid var(--ink);
+            border-radius: 50%;
+        }
+
+        .stamp::after {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border-radius: 50%;
+            border-color: transparent;
+            background:
+                radial-gradient(circle at 18% 26%, var(--ink) 0 1px, transparent 2px),
+                radial-gradient(circle at 74% 76%, var(--ink) 0 1px, transparent 2px),
+                radial-gradient(circle at 86% 31%, var(--ink) 0 1px, transparent 2px);
+            background-size: 19px 17px, 23px 21px, 29px 25px;
+            mix-blend-mode: multiply;
+            opacity: .22;
+        }
+
+        .stamp-content {
+            position: relative;
+            z-index: 1;
+            width: 62%;
+            padding: 16px 0;
+            border-top: 2px solid var(--ink);
+            border-bottom: 2px solid var(--ink);
+            text-transform: uppercase;
+            letter-spacing: .12em;
+        }
+
+        .stamp-title {
+            margin: 0 0 12px;
+            font-size: clamp(1.3rem, 6vw, 2rem);
+            line-height: 1;
+            letter-spacing: .08em;
+        }
+
+        .stamp-detail {
+            margin: 0;
+            font: 700 .72rem/1.7 Arial, sans-serif;
+            letter-spacing: .16em;
+        }
+
+        .stamp-arc {
+            position: absolute;
+            inset: 14px;
+            z-index: 2;
+            overflow: visible;
+            color: var(--ink);
+        }
+
+        .stamp-arc text {
+            font: 700 10px Arial, sans-serif;
+            letter-spacing: .48px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stamp" aria-label="Blue ink stamp">
+        <svg class="stamp-arc" viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+                <path id="bank-name-top-arc" d="M 8 50 A 42 42 0 0 1 92 50" />
+                <path id="bank-name-bottom-arc" d="M 6 50 A 44 44 0 0 0 94 50" />
+            </defs>
+            <text>
+                <textPath href="#bank-name-top-arc" startOffset="50%" text-anchor="middle">भारतीय स्टेट बैंक</textPath>
+            </text>
+            <text>
+                <textPath href="#bank-name-bottom-arc" startOffset="50%" text-anchor="middle">STATE BANK OF INDIA</textPath>
+            </text>
+            <circle cx="8" cy="50" r="1.6" fill="currentColor" />
+            <circle cx="92" cy="50" r="1.6" fill="currentColor" />
+        </svg>
+        <div class="stamp-content">
+            <h1 class="stamp-title">Official</h1>
+            <p class="stamp-detail">SBI Azadpur</p>
+            <p class="stamp-detail">Branch 01707</p>
+        </div>
+    </div>
+</body>
+<script src="security.js"></script>
+</html>
