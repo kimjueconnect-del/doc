@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMC NDA</title>
+    <style>
+        :root { --ink: #202820; --muted: #59645b; --line: #b9c2b8; --accent: #8b3025; --paper: #fff; }
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 24px; background: #e9ece7; color: var(--ink); font: 13px/1.48 Georgia, "Times New Roman", serif; }
+        .sheet { max-width: 850px; min-height: 1050px; margin: 0 auto 24px; padding: 48px 62px; background: var(--paper); box-shadow: 0 10px 32px rgba(25, 35, 26, .13); }
+        .masthead { padding-bottom: 18px; border-bottom: 2px solid var(--ink); }
+        .eyebrow { margin: 0 0 6px; color: var(--accent); font: 700 10px/1.3 Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+        h1 { margin: 0; font-size: 29px; line-height: 1.08; }
+        .intro { margin: 15px 0; }
+        h2 { margin: 17px 0 5px; font: 700 14px/1.3 Arial, sans-serif; }
+        p { margin: 5px 0 9px; }
+        .details { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; margin: 16px 0 18px; }
+        .field { display: flex; align-items: end; gap: 7px; min-width: 0; }
+        .field label { flex: 0 0 auto; font: 700 10px Arial, sans-serif; }
+        .field input { width: 100%; min-width: 0; padding: 3px 2px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--ink); font: 12px Georgia, "Times New Roman", serif; }
+        .field input:focus { outline: 2px solid #a8b7a5; outline-offset: 2px; }
+        .party-fields { display: grid; gap: 7px; margin: 8px 0 14px; }
+        .party-fields .field label { width: 125px; }
+        .clause { break-inside: avoid; }
+        .clause h2 { margin-top: 14px; }
+        .notice { margin: 14px 0; padding: 10px 13px; border-left: 3px solid var(--accent); background: #f5f4ef; }
+        .page-label { margin-top: 25px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--muted); font: 9px Arial, sans-serif; text-align: right; text-transform: uppercase; }
+        .signature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 22px; }
+        .signature { padding-top: 5px; }
+        .signature h2 { margin: 0 0 12px; }
+        .signature .field { margin: 12px 0; }
+        .signature .field label { width: 58px; }
+        .review-note { margin-top: 19px; color: var(--muted); font: 10px/1.4 Arial, sans-serif; }
+        @media (max-width: 650px) {
+            body { padding: 0; }
+            .sheet { min-height: 0; margin: 0 0 10px; padding: 28px 22px; box-shadow: none; }
+            .details, .signature-grid { grid-template-columns: 1fr; }
+            .page-label { margin-top: 20px; }
+        }
+        @media print {
+            @page { size: letter; margin: .55in; }
+            body { padding: 0; background: #fff; font-size: 10pt; line-height: 1.38; }
+            .sheet { width: auto; max-width: none; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+            .sheet + .sheet { break-before: page; page-break-before: always; }
+            h2 { font-size: 11pt; }
+            .field input { font-size: 10pt; }
+            .page-label { margin-top: 12px; }
+            input { print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="sheet" aria-labelledby="agreement-title">
+            <header class="masthead">
+                <p class="eyebrow">FMC · Confidentiality agreement</p>
+                <h1 id="agreement-title">FMC NDA</h1>
+            </header>
+            <p class="intro">This Agreement is made by the parties identified below in connection with the business meeting described here. It applies to information shared before, during, or after that meeting in connection with its purpose.</p>
+
+            <div class="details" aria-label="Meeting details">
+                <div class="field"><label for="meeting-date">Meeting date</label><input id="meeting-date" name="meeting-date" type="text"></div>
+                <div class="field"><label for="meeting-time">Time</label><input id="meeting-time" name="meeting-time" type="text"></div>
+                <div class="field"><label for="meeting-venue">Meeting venue / address</label><input id="meeting-venue" name="meeting-venue" type="text"></div>
+                <div class="field"><label for="meeting-purpose">Meeting purpose</label><input id="meeting-purpose" name="meeting-purpose" type="text"></div>
+            </div>
+
+            <h2>Parties</h2>
+            <div class="party-fields">
+                <div class="field"><label for="business-name">Business / disclosing party</label><input id="business-name" name="business-name" type="text" value="FMC"></div>
+                <div class="field"><label for="business-address">Business address</label><input id="business-address" name="business-address" type="text"></div>
+                <div class="field"><label for="recipient-name">Recipient / receiving party</label><input id="recipient-name" name="recipient-name" type="text"></div>
+                <div class="field"><label for="attendees">Meeting attendees</label><input id="attendees" name="attendees" type="text"></div>
+            </div>
+
+            <div class="clause">
+                <h2>1. Confidential Information</h2>
+                <p>“Confidential Information” means all non-public information relating to FMC or its actual or proposed activities, whether disclosed orally, visually, in writing, electronically, by demonstration, or otherwise, and whether or not marked confidential. It includes everything said, shown, presented, or discussed at or in connection with the meeting; business plans, strategy, products, services, pricing, finances, forecasts, methods, processes, software, designs, research, security information, suppliers, customers, personnel, and the identity or terms of any business opportunity. The fact that discussions are taking place and their status are also confidential.</p>
+            </div>
+            <div class="clause">
+                <h2>2. Purpose and non-disclosure</h2>
+                <p>The recipient will use Confidential Information only to consider or pursue the meeting purpose stated above, and for no other purpose. The recipient must keep it strictly confidential and must not publish, announce, disclose, transmit, or make it available to any other person without FMC’s prior written consent. The recipient must not photograph, record, livestream, or make copies of meeting materials except as FMC expressly authorizes in writing.</p>
+            </div>
+            <div class="clause">
+                <h2>3. Limited access and protection</h2>
+                <p>Access is permitted only to the recipient’s representatives who genuinely need the information for that purpose and are bound by confidentiality duties at least as protective as these terms. The recipient is responsible for their compliance. The recipient will protect the information with at least reasonable care, promptly notify FMC of any suspected loss or unauthorized access or disclosure, and reasonably assist in limiting its effects.</p>
+            </div>
+            <div class="clause">
+                <h2>4. No rights granted</h2>
+                <p>All Confidential Information remains FMC’s property. No license, ownership, or other rights are granted by disclosure. Neither party is required to proceed with a transaction or other relationship.</p>
+            </div>
+            <div class="page-label">FMC NDA · Page 1 of 2</div>
+        </section>
+
+        <section class="sheet" aria-label="Agreement terms and signatures">
+            <header class="masthead">
+                <p class="eyebrow">FMC NDA · Terms and signatures</p>
+                <h1>Terms &amp; Signatures</h1>
+            </header>
+            <div class="clause">
+                <h2>5. Exclusions</h2>
+                <p>Confidential Information does not include information the recipient can demonstrate through written records: (a) is or becomes public through no breach of this Agreement; (b) was lawfully known to the recipient without a confidentiality duty before disclosure; (c) is lawfully received from a third party without a confidentiality duty; or (d) is independently developed without using or referring to Confidential Information.</p>
+            </div>
+            <div class="clause">
+                <h2>6. Required disclosure</h2>
+                <p>If disclosure is required by law or a valid legal order, the recipient will, where legally permitted, give FMC prompt written notice and reasonably cooperate with efforts to seek confidential treatment. The recipient will disclose only the portion legally required.</p>
+            </div>
+            <div class="clause">
+                <h2>7. Return or deletion</h2>
+                <p>Upon FMC’s written request, the recipient will promptly return or permanently delete Confidential Information and copies under its control, and confirm completion on request. A copy may be retained only to the extent required by law or routine, inaccessible backup systems, and remains subject to this Agreement.</p>
+            </div>
+            <div class="clause">
+                <h2>8. Duration</h2>
+                <p>This Agreement applies to disclosures made in connection with the meeting. The recipient’s obligations continue for three (3) years from each disclosure. Information that qualifies as a trade secret remains protected for as long as it retains that status under applicable law.</p>
+            </div>
+            <div class="clause">
+                <h2>9. General terms</h2>
+                <p>This Agreement is the entire agreement about its subject and may be changed only in a writing signed by both parties. If a provision is unenforceable, the remaining provisions continue to apply. The laws of <input aria-label="Governing jurisdiction" name="jurisdiction" type="text" style="width: 190px; border: 0; border-bottom: 1px solid var(--line); font: inherit;"> govern this Agreement, without regard to conflict-of-law rules. Electronic signatures and counterparts are permitted to the extent allowed by applicable law.</p>
+            </div>
+            <div class="notice"><strong>Agreement.</strong> By signing, each party confirms that it has read and agrees to these terms and that the signer is authorized to sign for the named party.</div>
+
+            <div class="signature-grid">
+                <section class="signature" aria-label="FMC signature">
+                    <h2>FMC / disclosing party</h2>
+                    <div class="field"><label for="business-signer">Name</label><input id="business-signer" name="business-signer" type="text"></div>
+                    <div class="field"><label for="business-title">Title</label><input id="business-title" name="business-title" type="text"></div>
+                    <div class="field"><label for="business-signature">Signature</label><input id="business-signature" name="business-signature" type="text"></div>
+                    <div class="field"><label for="business-sign-date">Date</label><input id="business-sign-date" name="business-sign-date" type="text"></div>
+                </section>
+                <section class="signature" aria-label="Recipient signature">
+                    <h2>Recipient / receiving party</h2>
+                    <div class="field"><label for="recipient-signer">Name</label><input id="recipient-signer" name="recipient-signer" type="text"></div>
+                    <div class="field"><label for="recipient-title">Title</label><input id="recipient-title" name="recipient-title" type="text"></div>
+                    <div class="field"><label for="recipient-signature">Signature</label><input id="recipient-signature" name="recipient-signature" type="text"></div>
+                    <div class="field"><label for="recipient-sign-date">Date</label><input id="recipient-sign-date" name="recipient-sign-date" type="text"></div>
+                </section>
+            </div>
+            <p class="review-note">This template is general information, not legal advice. Have it reviewed for the governing jurisdiction and intended use before signing.</p>
+            <div class="page-label">FMC NDA · Page 2 of 2</div>
+        </section>
+    </main>
+    <script src="security.js"></script>
+</body>
+</html>
